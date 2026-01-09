@@ -1,22 +1,21 @@
-import React from 'react';
-import HeroSection from './components/HeroSection';
-import DailyFlowSection from './components/DailyFlowSection';
-import LevelUpSection from './components/LevelUpSection';
-import CommunitySection from './components/CommunitySection';
-import CTASection from './components/CTASection';
+import React, { Suspense, lazy } from 'react';
+import useDeviceType from './hooks/useDeviceType';
+
+// Lazy load layouts
+const MobileLayout = lazy(() => import('./layouts/MobileLayout'));
+const DesktopLayout = lazy(() => import('./layouts/DesktopLayout'));
 
 function App() {
+    const { isMobile } = useDeviceType();
+
     return (
-        <div className="min-h-screen bg-background-light dark:bg-background-dark flex justify-center font-sans">
-            {/* Mobile Container */}
-            <div className="w-full max-w-md bg-white dark:bg-slate-900 min-h-screen shadow-2xl overflow-hidden relative border-x border-gray-100 dark:border-gray-800">
-                <HeroSection />
-                <DailyFlowSection />
-                <LevelUpSection />
-                <CommunitySection />
-                <CTASection />
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-white dark:bg-slate-900">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
             </div>
-        </div>
+        }>
+            {isMobile ? <MobileLayout /> : <DesktopLayout />}
+        </Suspense>
     );
 }
 
