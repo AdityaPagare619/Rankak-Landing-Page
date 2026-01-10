@@ -78,24 +78,24 @@ const DashboardSection = () => {
 
                 <div className="max-w-5xl mx-auto text-center mb-24 relative z-10 perspective-1000">
                     <h1 className="text-6xl md:text-8xl font-black text-gray-800 dark:text-white mb-10 tracking-tight drop-shadow-sm flex items-center justify-center gap-4 flex-wrap hover:scale-[1.01] transition-transform duration-500 cursor-default">
-                        <span className="stagger-word text-indigo-600 dark:text-indigo-400 hover:text-[#5b3ee8] transition-colors duration-300">Your</span>
+                        <span className="stagger-word text-indigo-600 dark:text-indigo-400 hover:text-[#5b3ee8] transition-colors duration-300">Stop</span>
                         <span className="stagger-word text-amber-500 relative">
-                            Day.
+                            Grinding
                             <svg className="absolute -top-8 -right-10 w-12 h-12 text-yellow-400 animate-bounce-subtle" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"></path></svg>
                         </span>
-                        <span className="stagger-word text-[#3C3C3C] dark:text-slate-200">Optimized.</span>
+                        <span className="stagger-word text-[#3C3C3C] dark:text-slate-200">Blindly.</span>
                     </h1>
                     <div className="relative inline-block max-w-3xl mx-auto mt-8 group/quote">
                         <div className="absolute -left-8 -top-8 bg-indigo-600 rounded-full w-16 h-16 flex items-center justify-center shadow-lg z-20 animate-[bounce_3s_infinite] group-hover/quote:animate-none group-hover/quote:rotate-12 transition-transform duration-300">
                             <span className="material-symbols-outlined text-white text-4xl">format_quote</span>
                         </div>
                         <div className="whisper-bubble p-10 md:p-14 text-xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed animate-grow-in origin-top glass-panel border-white/50 dark:border-white/10 backdrop-blur-md bg-white/60 dark:bg-slate-800/60">
-                            You don't need 10 hours daily.
+                            You don't need 10 hours. You need
                             <span className="font-bold text-indigo-600 dark:text-indigo-400 relative inline-block mx-1 hover:scale-105 transition-transform cursor-pointer group/highlight">
-                                20 min of smart practice
+                                2 hours of *right* practice.
                                 <div className="absolute -bottom-1 left-0 w-full h-[4px] bg-amber-400 rounded-full opacity-80 group-hover/highlight:w-[110%] group-hover/highlight:-left-[5%] transition-all duration-300"></div>
                             </span>
-                            beats 2 hours of random grinding. And you'll actually remember what you learn.
+                            We analyze your brain, not just your answers.
                         </div>
                     </div>
                 </div>
@@ -122,11 +122,11 @@ const DashboardSection = () => {
                             </div>
                             <div className="progress-rune bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 dark:border-white/10 relative w-full max-w-[280px] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group/card">
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xs font-black text-amber-600 uppercase tracking-wider bg-amber-50 dark:bg-amber-900/30 px-3 py-1.5 rounded-lg">6:30 AM</span>
+                                    <span className="text-xs font-black text-amber-600 uppercase tracking-wider bg-amber-50 dark:bg-amber-900/30 px-3 py-1.5 rounded-lg">Analysis</span>
                                     <span className="text-xs font-bold text-gray-400 flex items-center gap-1 group-hover/card:text-amber-500 transition-colors"><span className="material-symbols-outlined text-base">bolt</span>+15 XP</span>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-amber-600 transition-colors">Morning Scroll</h3>
-                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Wake up with 5 quick Physics concepts.</p>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-amber-600 transition-colors">Real-Time Weakness Detector</h3>
+                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">"Did you panic in Physics?" We catch what you missed.</p>
                             </div>
                         </div>
 
@@ -142,11 +142,11 @@ const DashboardSection = () => {
                             </div>
                             <div className="progress-rune bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 dark:border-white/10 relative w-full max-w-[280px] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group/card">
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xs font-black text-green-600 uppercase tracking-wider bg-green-50 dark:bg-green-900/30 px-3 py-1.5 rounded-lg">2:00 PM</span>
+                                    <span className="text-xs font-black text-green-600 uppercase tracking-wider bg-green-50 dark:bg-green-900/30 px-3 py-1.5 rounded-lg">Protection</span>
                                     <span className="text-xs font-bold text-gray-400 flex items-center gap-1 group-hover/card:text-green-500 transition-colors"><span className="material-symbols-outlined text-base">local_fire_department</span>Streak</span>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-green-600 transition-colors">Lunch Break</h3>
-                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Bite-sized Chem quiz while you eat.</p>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-green-600 transition-colors">Exam-Level Accuracy</h3>
+                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">No easy questions. Only what appears in the exam.</p>
                             </div>
                         </div>
 
@@ -162,11 +162,11 @@ const DashboardSection = () => {
                             </div>
                             <div className="progress-rune bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 dark:border-white/10 relative w-full max-w-[280px] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group/card">
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xs font-black text-indigo-500 uppercase tracking-wider bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1.5 rounded-lg">7:00 PM</span>
+                                    <span className="text-xs font-black text-indigo-500 uppercase tracking-wider bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1.5 rounded-lg">Depth</span>
                                     <span className="text-xs font-bold text-gray-400 flex items-center gap-1 group-hover/card:text-indigo-500 transition-colors"><span className="material-symbols-outlined text-base">stars</span>Level Up</span>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-indigo-600 transition-colors">Deep Dive</h3>
-                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">45 min focused mock test session.</p>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-indigo-600 transition-colors">Concept Clarity</h3>
+                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Don't just see the solution. Understand the *why*.</p>
                             </div>
                         </div>
 
@@ -183,11 +183,11 @@ const DashboardSection = () => {
                             </div>
                             <div className="progress-rune bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 dark:border-white/10 relative w-full max-w-[280px] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group/card">
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xs font-black text-teal-600 uppercase tracking-wider bg-teal-50 dark:bg-teal-900/30 px-3 py-1.5 rounded-lg">Before Bed</span>
+                                    <span className="text-xs font-black text-teal-600 uppercase tracking-wider bg-teal-50 dark:bg-teal-900/30 px-3 py-1.5 rounded-lg">Rest</span>
                                     <span className="text-xs font-bold text-gray-400 flex items-center gap-1 group-hover/card:text-teal-500 transition-colors"><span className="material-symbols-outlined text-base">lock</span>Saved</span>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-teal-600 transition-colors">Sleep Ritual</h3>
-                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Review mistakes. Clear mind.</p>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white leading-tight mb-2 group-hover/card:text-teal-600 transition-colors">Burnout Shield</h3>
+                                <p className="text-base text-gray-500 dark:text-gray-400 font-medium leading-relaxed">"Go sleep. You're overexerted." We protect your energy.</p>
                             </div>
                         </div>
                     </div>

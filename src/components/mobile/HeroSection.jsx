@@ -1,14 +1,11 @@
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import React from 'react';
 
 const HeroSection = () => {
     return (
-        <div className="relative w-full min-h-[100dvh] bg-s3-bg-light dark:bg-background-dark text-slate-800 dark:text-white font-body antialiased overflow-hidden selection:bg-s3-primary/20 selection:text-s3-primary flex flex-col items-center justify-between">
+        <section className="relative w-full overflow-hidden bg-[#FFFDF5] dark:bg-slate-950 min-h-screen">
             {/* Background Elements */}
-            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-                <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-s3-primary/20 rounded-full mix-blend-multiply filter blur-[100px] animate-blob"></div>
-                <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-[100px] animate-blob" style={{ animationDelay: '2s' }}></div>
-                <div className="absolute top-[40%] left-[20%] w-72 h-72 bg-s3-accent/10 rounded-full mix-blend-multiply filter blur-[80px] animate-blob" style={{ animationDelay: '4s' }}></div>
-
+            <div className="absolute inset-0 w-full h-full">
                 <svg className="absolute inset-0 w-full h-full opacity-40 dark:opacity-20" preserveAspectRatio="none">
                     <path className="blur-2xl animate-pulse-slow" d="M-50,0 C100,150 20,400 150,600 C280,800 100,900 200,1200" fill="none" stroke="url(#streamGradient)" strokeWidth="80"></path>
                     <path className="opacity-60" d="M-50,0 C100,150 20,400 150,600 C280,800 100,900 200,1200" fill="none" stroke="url(#streamGradient)" strokeDasharray="15 25" strokeWidth="2"></path>
@@ -22,20 +19,21 @@ const HeroSection = () => {
                 </svg>
             </div>
 
-            {/* Restored Header */}
-            <header className="fixed top-0 left-0 w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-md left-1/2 -translate-x-1/2 rounded-b-2xl border-x border-b border-white/50">
-                <div className="flex items-center gap-3 group cursor-pointer transition-transform active:scale-95">
-                    <div className="relative w-9 h-9 flex items-center justify-center bg-gradient-to-tr from-indigo-50 to-indigo-100 rounded-xl overflow-hidden shadow-inner border border-white/50">
-                        <span className="material-icons-round text-s3-primary text-xl relative z-10 animate-[pulse_3s_ease-in-out_infinite]">auto_awesome</span>
+            {/* Header - Fusion Logo */}
+            <header className="fixed top-0 left-0 w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-md left-1/2 -translate-x-1/2 rounded-b-2xl border-x border-b border-white/50 backdrop-blur-xl bg-white/60 dark:bg-slate-900/60">
+                <div className="flex items-center gap-2 group cursor-pointer transition-transform active:scale-95">
+                    <div className="relative w-8 h-8 flex items-center justify-center bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-lg shadow-lg shadow-indigo-500/30 overflow-hidden">
+                        <span className="font-display font-black text-white text-lg relative z-10">R</span>
+                        <div className="absolute inset-0 bg-white/20 animate-[shimmer_2s_infinite]"></div>
                     </div>
-                    <span className="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-s3-primary transition-colors">RANKAK</span>
+                    <span className="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">ANKAK</span>
                 </div>
                 <div className="relative group cursor-default">
-                    <div className="absolute inset-0 bg-s3-accent/20 blur-md rounded-full animate-pulse-slow"></div>
-                    <div className="relative px-4 py-1.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-s3-accent/40 text-amber-700 dark:text-amber-300 text-[10px] font-bold tracking-[0.15em] uppercase flex items-center gap-2 shadow-sm backdrop-blur-sm">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-s3-accent opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-s3-accent"></span>
+                    <div className="absolute inset-0 bg-amber-400/20 blur-md rounded-full animate-pulse-slow"></div>
+                    <div className="relative px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-amber-200/50 text-amber-700 dark:text-amber-300 text-[10px] font-bold tracking-[0.15em] uppercase flex items-center gap-1.5 shadow-sm backdrop-blur-sm">
+                        <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500"></span>
                         </span>
                         Early Access
                     </div>
@@ -43,71 +41,102 @@ const HeroSection = () => {
             </header>
 
             {/* Main Content */}
-            <div className="relative z-10 flex flex-col items-center text-center mt-24">
-                <h1 className="text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-2 relative inline-block">
-                    RANKAK
-                    <span className="absolute -top-1 -right-4 text-2xl animate-[ping_2s_ease-in-out_infinite] opacity-40 text-purple-400">✨</span>
+            <div className="relative z-10 flex flex-col items-center text-center mt-28 px-6 w-full">
+                <h1 className="text-[2.5rem] font-black tracking-tight text-slate-900 dark:text-white mb-2 relative inline-block leading-[1.1]">
+                    <span className="animate-bounce-in-text inline-block" style={{ animationDelay: '0.1s' }}>The AI That</span>
+                    <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 animate-gradient-shift relative inline-block">
+                        Actually Knows
+                        <svg className="absolute w-full h-2 -bottom-1 left-0 text-indigo-400 opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99999C49.5002 0.500007 154.5 -2.49999 198 6.99999" stroke="currentColor" strokeLinecap="round" strokeWidth="3"></path></svg>
+                    </span>
+                    <br />
+                    <span className="animate-bounce-in-text inline-block" style={{ animationDelay: '0.2s' }}>JEE.</span>
                 </h1>
-                <div className="flex items-center justify-center gap-4 py-2 opacity-60">
-                    <span className="h-px w-12 bg-gradient-to-r from-transparent via-s3-primary to-transparent"></span>
-                    <span className="material-symbols-outlined text-[12px] text-s3-primary animate-[spin_4s_linear_infinite]">star</span>
-                    <span className="h-px w-12 bg-gradient-to-l from-transparent via-s3-primary to-transparent"></span>
-                </div>
-                <p className="text-[clamp(18px,5vw,22px)] font-medium text-slate-600 dark:text-slate-300 max-w-xs mx-auto leading-relaxed tracking-wide">
-                    Rank Up JEE/NEET With Rankak
+
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-4 max-w-[280px] leading-relaxed font-medium">
+                    Random practice = Random results. <br />
+                    <span className="text-indigo-600 dark:text-indigo-400 font-bold relative inline-block mt-1">
+                        सही content, सही time पर।
+                        <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-indigo-200 dark:bg-indigo-800 rounded-full"></span>
+                    </span>
                 </p>
             </div>
 
-            {/* Center Visuals */}
-            <div className="flex-1 w-full relative flex flex-col justify-end items-center mt-4">
-                <div className="relative flex-1 w-full flex items-center justify-center min-h-[280px]">
-                    {/* Main Floating Card */}
-                    <div className="relative w-64 h-64 z-20 cursor-pointer group touch-manipulation">
-                        <div className="absolute inset-0 bg-indigo-400 rounded-full blur-[60px] scale-0 opacity-0 group-active:scale-150 group-active:opacity-40 transition-all duration-500 ease-out"></div>
-                        <div className="w-full h-full relative flex flex-col items-center justify-center animate-bounce-subtle group-active:scale-95 transition-transform duration-200">
-                            <div className="w-48 h-56 bg-gradient-to-b from-white/90 to-indigo-50/90 dark:from-slate-800/90 dark:to-slate-900/90 rounded-[3rem] shadow-soft dark:shadow-glow border-4 border-white dark:border-indigo-500/30 flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-md">
-                                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
-                                <div className="flex gap-5 mb-4 z-10">
-                                    <div className="w-4 h-4 bg-s3-accent rounded-full shadow-gold-glow animate-[pulse_4s_ease-in-out_infinite]"></div>
-                                    <div className="w-4 h-4 bg-s3-accent rounded-full shadow-gold-glow animate-[pulse_4s_ease-in-out_infinite]" style={{ animationDelay: '0.5s' }}></div>
-                                </div>
-                                <span className="material-symbols-outlined text-[80px] text-s3-primary drop-shadow-lg z-10 transition-transform group-hover:-rotate-3">school</span>
-                                <div className="absolute bottom-6 w-16 h-1.5 bg-indigo-200 rounded-full animate-[pulse_3s_ease-in-out_infinite]"></div>
-                            </div>
-                            <div className="w-28 h-4 bg-indigo-900/10 rounded-[100%] blur-md mt-6 animate-[pulse_3s_ease-in-out_infinite]"></div>
+            {/* Main Avatar - Lottie Animation */}
+            <div className="relative w-full flex justify-center mt-8 mb-8">
+                <div className="relative w-72 h-72 z-10 animate-float">
+                    <DotLottieReact
+                        src="https://lottie.host/934db0fb-ed6c-418c-a68f-853839dc64af/sXAp34Jsh1.lottie"
+                        loop
+                        autoplay
+                        style={{ width: '100%', height: '100%' }}
+                    />
+                    {/* Inner Glow */}
+                    <div className="absolute inset-0 bg-indigo-500/10 rounded-full blur-2xl animate-pulse mix-blend-overlay pointer-events-none"></div>
+                </div>
+
+                {/* Floating Card 1: Exam Countdown (Top Left) */}
+                <div className="absolute top-8 left-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-3 rounded-2xl shadow-lg border border-white/40 dark:border-white/10 animate-card-left z-20 scale-[0.8] origin-bottom-right">
+                    <div className="flex items-center gap-3">
+                        <div className="relative w-8 h-8 flex items-center justify-center">
+                            <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                <path className="text-indigo-100 dark:text-indigo-900" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="4" />
+                                <path className="text-indigo-500" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                            </svg>
+                            <span className="absolute text-[8px] font-bold text-indigo-600 dark:text-indigo-400">75%</span>
+                        </div>
+                        <div>
+                            <div className="text-[8px] text-gray-400 font-bold uppercase tracking-wider">Time Left</div>
+                            <div className="text-sm font-black text-gray-900 dark:text-white leading-none">145 Days</div>
                         </div>
                     </div>
+                </div>
 
-                    {/* Floating Icons */}
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-30 pr-1">
-                        <button className="w-12 h-12 rounded-2xl bg-white/90 dark:bg-slate-800/90 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] border border-indigo-50 dark:border-indigo-900 flex items-center justify-center text-s3-accent hover:scale-110 active:scale-90 transition-all duration-300 animate-float" style={{ animationDelay: '0.1s' }}>
-                            <span className="material-symbols-outlined text-[24px]">emoji_events</span>
-                        </button>
-                        <button className="w-12 h-12 rounded-2xl bg-white/90 dark:bg-slate-800/90 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] border border-indigo-50 dark:border-indigo-900 flex items-center justify-center text-s3-primary hover:scale-110 active:scale-90 transition-all duration-300 animate-float" style={{ animationDelay: '0.6s' }}>
-                            <span className="material-symbols-outlined text-[24px]">psychology</span>
-                        </button>
-                        <button className="w-12 h-12 rounded-2xl bg-white/90 dark:bg-slate-800/90 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] border border-indigo-50 dark:border-indigo-900 flex items-center justify-center text-s3-success hover:scale-110 active:scale-90 transition-all duration-300 animate-float" style={{ animationDelay: '1.1s' }}>
-                            <span className="material-symbols-outlined text-[24px]">track_changes</span>
-                        </button>
+                {/* Floating Card 2: AI Insight (Bottom Right) */}
+                <div className="absolute bottom-12 right-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-3 rounded-2xl shadow-lg border border-white/40 dark:border-white/10 animate-card-right z-20 scale-[0.8] origin-top-left w-40">
+                    <div className="flex justify-between items-center mb-2">
+                        <span className="text-[8px] font-black text-amber-600 uppercase tracking-widest flex items-center gap-1">
+                            <span className="material-symbols-outlined text-[10px] animate-spin">sync</span>
+                            Analyzing
+                        </span>
+                    </div>
+                    <div className="flex justify-between items-end h-4 gap-0.5 px-1">
+                        <div className="w-1/5 bg-indigo-300 rounded-t-sm h-[40%] animate-pulse"></div>
+                        <div className="w-1/5 bg-indigo-400 rounded-t-sm h-[70%] animate-pulse delay-75"></div>
+                        <div className="w-1/5 bg-indigo-500 rounded-t-sm h-[50%] animate-pulse delay-150"></div>
+                        <div className="w-1/5 bg-indigo-600 rounded-t-sm h-[90%] animate-pulse delay-200"></div>
+                        <div className="w-1/5 bg-indigo-700 rounded-t-sm h-[60%] animate-pulse delay-300"></div>
                     </div>
                 </div>
 
-                {/* CTA Buttons */}
-                <div className="w-full space-y-4 relative z-40 mt-6 mb-safe px-6 pb-6">
-                    <button className="relative w-full py-4 rounded-xl bg-gradient-to-r from-[#6366f1] to-[#7c3aed] text-white font-display font-semibold text-[17px] tracking-wide shadow-lg overflow-hidden group active:scale-[0.98] transition-all duration-200">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] animate-[shimmer_3s_infinite]"></div>
-                        <span className="relative z-10 flex items-center justify-center gap-2">
-                            Start Free Trial
-                            <span className="material-symbols-outlined text-xl animate-[pulse_1s_ease-in-out_infinite]">bolt</span>
-                        </span>
-                    </button>
-                    <button className="w-full py-4 rounded-xl bg-indigo-50/80 dark:bg-slate-800/50 text-[#4f46e5] dark:text-indigo-300 font-display font-semibold text-[17px] flex items-center justify-center gap-2 hover:bg-indigo-100 active:scale-[0.98] transition-all duration-200 backdrop-blur-sm">
-                        View Ascent Records
-                        <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
-                    </button>
+                {/* Badge: AI Active (Orbiting) */}
+                <div className="absolute top-0 right-8 bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl text-gray-800 dark:text-white px-3 py-1.5 rounded-full shadow-lg border border-white/40 dark:border-white/10 animate-float-delayed font-bold text-[10px] flex items-center gap-1.5 z-20 transform rotate-6">
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    AI Active
                 </div>
             </div>
-        </div>
+
+            {/* CTA Buttons */}
+            <div className="w-full space-y-3 relative z-40 mb-safe px-6 pb-12">
+                <button className="relative w-full py-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-display font-bold text-[17px] tracking-wide shadow-xl shadow-indigo-500/30 overflow-hidden group hover-liquid active:scale-[0.98]">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] animate-[shimmer_3s_infinite]"></div>
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                        Get Early Access
+                        <span className="material-symbols-outlined text-xl animate-[pulse_1s_ease-in-out_infinite]">bolt</span>
+                    </span>
+                </button>
+                <button className="w-full py-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 text-indigo-600 dark:text-indigo-300 font-display font-bold text-[17px] flex items-center justify-center gap-2 hover:bg-white/80 active:scale-[0.98] transition-all duration-200 backdrop-blur-sm border border-white/50 dark:border-white/10 hover-liquid">
+                    See Rankers
+                    <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </button>
+            </div>
+
+            {/* Seamless Transition Mask */}
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#FFFDF5] to-transparent z-20 pointer-events-none"></div>
+        </section>
     );
 };
 

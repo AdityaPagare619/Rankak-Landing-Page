@@ -6,6 +6,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+build_log.txt
+build_log_2.txt
+build_error.log
+build_error_utf8.log
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -118,3 +122,12 @@ dist
 
 # Vite
 dist
+
+# Inspiration & Docs (Not for Production Repo)
+inspiration-code/
+inspiration-code-desktop/
+rankak-hero-section/
+stitch_remix_of_rankak_landing_page/
+AI-External-Features.md
+ENGINE-CASE-STUDY.md
+STUDENT-PLATFORM-BLUEPRINT-v1.md

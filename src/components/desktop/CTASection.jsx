@@ -6,29 +6,29 @@ const CTASection = () => {
             <div className="relative z-10 container mx-auto px-4 max-w-7xl">
                 {/* Header */}
                 <div className="text-center mb-16 space-y-8 relative">
-                    <h1 className="text-5xl md:text-7xl font-black tracking-tight text-[#2D334A] dark:text-white leading-[1.1]">
+                    <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-800 leading-[1.1]">
                         <div className="inline-block relative">
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-gray-800 dark:text-gray-200">Ready</span>
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-gray-800 dark:text-gray-200 mx-2">to</span>
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-[#4338ca] dark:text-[#818cf8] relative">
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">Ready</span>{' '}
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">to</span>{' '}
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary relative">
                                 try?
-                                <span className="absolute -top-6 -right-6 text-3xl opacity-50 animate-bounce text-[#F59E0B]">?</span>
+                                <span className="absolute -top-6 -right-6 text-3xl opacity-50 animate-bounce text-amber-500">?</span>
                             </span>
                         </div>
                         <br className="hidden md:block" />
                         <div className="inline-block mt-2">
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-gray-800 dark:text-gray-200">No</span>
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-gray-800 dark:text-gray-200 ml-2">card.</span>
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-[#4338ca] dark:text-[#818cf8] ml-2">No</span>
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-[#4338ca] dark:text-[#818cf8] ml-2">commitment.</span>
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">No</span>{' '}
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">card.</span>{' '}
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary">No</span>{' '}
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary">commitment.</span>
                         </div>
                     </h1>
                     {/* Scroll Quote */}
                     <div className="relative max-w-3xl mx-auto mt-10 transform hover:scale-[1.02] transition-transform duration-500">
-                        <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-24 bg-[#E0D0B0] dark:bg-stone-700 rounded-l-md shadow-sm z-0 border-r border-[#D4C4A5] dark:border-stone-600"></div>
-                        <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-24 bg-[#E0D0B0] dark:bg-stone-700 rounded-r-md shadow-sm z-0 border-l border-[#D4C4A5] dark:border-stone-600"></div>
-                        <div className="relative bg-[#FEFCF5] dark:bg-stone-800 py-6 px-12 rounded-lg shadow-[0_10px_15px_-3px_rgba(168,162,158,0.1),0_4px_6px_-2px_rgba(168,162,158,0.05)] border border-[#EBE3D0] dark:border-stone-700 z-10 flex items-center justify-center">
-                            <p className="text-xl md:text-2xl font-bold text-stone-600 dark:text-stone-300 text-center italic font-serif leading-relaxed">
+                        <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-24 bg-amber-100 rounded-l-md shadow-sm z-0 border-r border-amber-200"></div>
+                        <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-24 bg-amber-100 rounded-r-md shadow-sm z-0 border-l border-amber-200"></div>
+                        <div className="relative bg-white/90 py-6 px-12 rounded-lg shadow-lg border border-amber-100 z-10 flex items-center justify-center backdrop-blur-sm">
+                            <p className="text-xl md:text-2xl font-bold text-gray-600 text-center italic font-serif leading-relaxed">
                                 "Start for free. Use all features. If it works, you keep using it.<br className="hidden sm:block" /> If not, no one's mad."
                             </p>
                         </div>

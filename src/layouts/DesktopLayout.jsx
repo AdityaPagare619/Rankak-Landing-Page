@@ -12,16 +12,31 @@ const CTASection = React.lazy(() => import('../components/desktop/CTASection'));
 const DesktopLayout = () => {
     return (
         <div className="min-h-screen font-body text-slate-900 dark:text-white overflow-x-hidden selection:bg-hero-primary selection:text-white relative">
-            {/* Global Background Layer (z-0) - Animated Blobs */}
+            {/* Global Background Layer (z-0) - Premium Depth */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
-                {/* Top-left Indigo blob */}
-                <div className="absolute -top-[20%] -left-[10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-indigo-200/40 dark:bg-indigo-900/30 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen"></div>
-                {/* Top-right Yellow blob */}
-                <div className="absolute -top-[10%] -right-[15%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] bg-amber-200/30 dark:bg-amber-900/20 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen"></div>
-                {/* Bottom-center Green blob */}
-                <div className="absolute bottom-[10%] left-[30%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-lime-200/30 dark:bg-lime-900/20 rounded-full blur-[100px] animate-blob animation-delay-4000 mix-blend-multiply dark:mix-blend-screen"></div>
-                {/* Bottom-left Pink blob */}
-                <div className="absolute -bottom-[20%] -left-[10%] w-[45vw] h-[45vw] max-w-[650px] max-h-[650px] bg-pink-200/20 dark:bg-pink-900/15 rounded-full blur-[100px] animate-blob animation-delay-6000 mix-blend-multiply dark:mix-blend-screen"></div>
+                {/* Base Gradient Layer */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFFDF5] via-[#F0FAFF] to-[#FAFFF0]"></div>
+
+                {/* Subtle Grid Pattern for Depth */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{
+                    backgroundImage: 'linear-gradient(#818CF8 1px, transparent 1px), linear-gradient(90deg, #818CF8 1px, transparent 1px)',
+                    backgroundSize: '60px 60px'
+                }}></div>
+
+                {/* Top-left Indigo blob - Deep Glow */}
+                <div className="absolute -top-[15%] -left-[8%] w-[55vw] h-[55vw] max-w-[750px] max-h-[750px] bg-gradient-to-br from-indigo-300/50 to-indigo-400/30 rounded-full blur-[130px] animate-blob mix-blend-multiply"></div>
+
+                {/* Top-right Golden Accent */}
+                <div className="absolute -top-[5%] -right-[12%] w-[45vw] h-[45vw] max-w-[650px] max-h-[650px] bg-gradient-to-bl from-amber-200/40 to-orange-300/30 rounded-full blur-[110px] animate-blob animation-delay-2000 mix-blend-multiply"></div>
+
+                {/* Center Sage Bloom */}
+                <div className="absolute top-[35%] left-[25%] w-[35vw] h-[35vw] max-w-[550px] max-h-[550px] bg-gradient-to-tr from-lime-200/35 to-emerald-300/25 rounded-full blur-[100px] animate-blob animation-delay-4000 mix-blend-multiply"></div>
+
+                {/* Bottom-right Purple Aura */}
+                <div className="absolute bottom-[5%] right-[10%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-gradient-to-tl from-purple-200/30 to-fuchsia-300/20 rounded-full blur-[120px] animate-blob animation-delay-6000 mix-blend-multiply"></div>
+
+                {/* Central Gamified Orb Glow - Subtle Hero Accent */}
+                <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[30vw] h-[30vw] max-w-[450px] max-h-[450px] bg-radial-gradient from-white/40 via-indigo-100/20 to-transparent rounded-full blur-[80px] opacity-70 animate-pulse-slow"></div>
             </div>
 
             {/* Content Layer (z-10) - All sections */}
