@@ -188,7 +188,7 @@ const CTASection = () => {
                                                         onChange={handleInputChange}
                                                         className="block w-full border-0 bg-transparent p-3 text-lg font-bold text-[#2D334A] dark:text-white placeholder-gray-300 focus:ring-0 z-10 relative"
                                                         max="2030"
-                                                        min="2024"
+                                                        min="2026"
                                                         placeholder="2026"
                                                         type="number"
                                                     />

@@ -180,7 +180,7 @@ const LevelUpSection = () => {
             </motion.main>
 
             {/* Seamless Transition Gradient (Purple -> Green) */}
-            <div className="w-full h-32 bg-gradient-to-b from-[#F5F3FF] to-[#F0FDF4] dark:from-[#0F0E1B] dark:to-[#052e16] relative z-0 mt-[-20px]"></div>
+            <div className="w-full h-32 bg-gradient-to-b from-[#F5F3FF] to-[#F0FDF4] dark:from-[#0F0E1B] dark:to-[#052e16] relative z-0 mt-[-40px]"></div>
         </div>
     );
 };

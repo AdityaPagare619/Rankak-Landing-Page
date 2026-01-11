@@ -35,7 +35,10 @@ const CommunitySection = () => {
     };
 
     return (
-        <div className="relative overflow-hidden font-sans text-slate-900 pt-16 pb-0">
+        <div className="relative overflow-hidden font-sans text-slate-900 pt-0 pb-0">
+            {/* Top Gradient Mask for Seamless Transition (Green -> White/Dark) */}
+            <div className="w-full h-32 bg-gradient-to-b from-[#F0FDF4] to-transparent dark:from-[#052e16] dark:to-transparent relative z-0 mb-[-60px]"></div>
+
             <motion.main
                 variants={containerVariants}
                 initial="hidden"
