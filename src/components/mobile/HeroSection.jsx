@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSection = () => {
     return (
-        <section className="relative w-full overflow-hidden bg-[#FFFDF5] dark:bg-slate-950 min-h-screen">
+        <section className="relative w-full overflow-hidden min-h-screen">
             {/* Background Elements */}
             <div className="absolute inset-0 w-full h-full">
                 <svg className="absolute inset-0 w-full h-full opacity-40 dark:opacity-20" preserveAspectRatio="none">
@@ -30,7 +30,7 @@ const HeroSection = () => {
                 </div>
                 <div className="relative group cursor-default">
                     <div className="absolute inset-0 bg-amber-400/20 blur-md rounded-full animate-pulse-slow"></div>
-                    <div className="relative px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-amber-200/50 text-amber-700 dark:text-amber-300 text-[10px] font-bold tracking-[0.15em] uppercase flex items-center gap-1.5 shadow-sm backdrop-blur-sm">
+                    <div className="relative px-3 py-1.5 rounded-full border border-amber-200/50 text-amber-700 dark:text-amber-300 text-[10px] font-bold tracking-[0.15em] uppercase flex items-center gap-1.5 shadow-sm backdrop-blur-sm">
                         <span className="relative flex h-1.5 w-1.5">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500"></span>
@@ -128,7 +128,7 @@ const HeroSection = () => {
                         <span className="material-symbols-outlined text-xl animate-[pulse_1s_ease-in-out_infinite]">bolt</span>
                     </span>
                 </button>
-                <button className="w-full py-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 text-indigo-600 dark:text-indigo-300 font-display font-bold text-[17px] flex items-center justify-center gap-2 hover:bg-white/80 active:scale-[0.98] transition-all duration-200 backdrop-blur-sm border border-white/50 dark:border-white/10 hover-liquid">
+                <button className="w-full py-4 rounded-2xl text-indigo-600 dark:text-indigo-300 font-display font-bold text-[17px] flex items-center justify-center gap-2 hover:bg-white/80 active:scale-[0.98] transition-all duration-200 backdrop-blur-sm border border-white/50 dark:border-white/10 hover-liquid">
                     See Rankers
                     <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
                 </button>

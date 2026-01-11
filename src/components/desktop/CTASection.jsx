@@ -1,6 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { supabase } from '../../lib/supabaseClient';
 
 const CTASection = () => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        classTier: 'Class 11th',
+        targetYear: '2025'
+    });
+    const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        if (status === 'error') setStatus('idle');
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!formData.email || !formData.fullName) {
+            setErrorMessage('Please fill in all fields');
+            setStatus('error');
+            return;
+        }
+
+        setStatus('loading');
+        setErrorMessage('');
+
+        try {
+            const { error } = await supabase
+                .from('early_access_users')
+                .insert([
+                    {
+                        full_name: formData.fullName,
+                        email: formData.email,
+                        class_tier: formData.classTier,
+                        target_year: formData.targetYear
+                    }
+                ]);
+
+            if (error) {
+                if (error.code === '23505') { // Unique violation
+                    throw new Error('This email is already registered!');
+                }
+                throw error;
+            }
+
+            setStatus('success');
+        } catch (error) {
+            console.error('Error:', error);
+            setErrorMessage(error.message || 'Something went wrong. Please try again.');
+            setStatus('error');
+        }
+    };
+
     return (
         <section className="font-[Nunito] text-[#2D334A] dark:text-white min-h-screen relative overflow-x-hidden py-12 lg:py-16 z-10">
             <div className="relative z-10 container mx-auto px-4 max-w-7xl">
@@ -11,16 +65,16 @@ const CTASection = () => {
                             <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">Ready</span>{' '}
                             <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">to</span>{' '}
                             <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary relative">
-                                try?
+                                Compete?
                                 <span className="absolute -top-6 -right-6 text-3xl opacity-50 animate-bounce text-amber-500">?</span>
                             </span>
                         </div>
                         <br className="hidden md:block" />
                         <div className="inline-block mt-2">
                             <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">No</span>{' '}
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">card.</span>{' '}
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary">No</span>{' '}
-                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary">commitment.</span>
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">Comfort</span>{' '}
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary">Zones.</span>{' '}
+                            <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default text-hero-primary">Just Ranks.</span>
                         </div>
                     </h1>
                     {/* Scroll Quote */}
@@ -29,7 +83,7 @@ const CTASection = () => {
                         <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-24 bg-amber-100 rounded-r-md shadow-sm z-0 border-l border-amber-200"></div>
                         <div className="relative bg-white/90 py-6 px-12 rounded-lg shadow-lg border border-amber-100 z-10 flex items-center justify-center backdrop-blur-sm">
                             <p className="text-xl md:text-2xl font-bold text-gray-600 text-center italic font-serif leading-relaxed">
-                                "Start for free. Use all features. If it works, you keep using it.<br className="hidden sm:block" /> If not, no one's mad."
+                                "Real growth happens when you face real competition.<br className="hidden sm:block" /> Join the Fellowship. Claim your Rank."
                             </p>
                         </div>
                     </div>
@@ -50,59 +104,134 @@ const CTASection = () => {
                                         Initiation Portal
                                     </span>
                                 </div>
-                                <form className="space-y-8">
-                                    {/* Mobile Number */}
-                                    <div className="bg-[#F3F4F6] dark:bg-slate-800 rounded-3xl p-3 border-2 border-transparent relative transition-all duration-400 focus-within:-translate-y-0.5 focus-within:scale-[1.01] focus-within:shadow-[0_0_0_4px_rgba(99,102,241,0.15),0_4px_12px_rgba(0,0,0,0.05)] focus-within:border-[#6366f1] focus-within:bg-white dark:focus-within:bg-slate-800">
-                                        <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Mobile Number</label>
-                                        <div className="flex items-center px-1">
-                                            <div className="flex items-center space-x-2 pl-4 pr-4 border-r-2 border-gray-200/80 dark:border-gray-700 cursor-pointer hover:bg-gray-200/50 dark:hover:bg-gray-700/50 rounded-xl py-2 transition-colors mr-2">
-                                                <img alt="India" className="rounded-sm shadow-sm w-6 h-4" src="https://flagcdn.com/w40/in.png" />
-                                                <span className="font-bold text-gray-700 dark:text-gray-300">+91</span>
-                                                <span className="material-symbols-outlined text-gray-400 text-sm">expand_more</span>
-                                            </div>
-                                            <input className="block w-full border-0 bg-transparent p-2 text-xl font-bold text-[#2D334A] dark:text-white placeholder-gray-300 focus:ring-0 tracking-wide" placeholder="98765 43210" type="tel" />
+
+                                {status === 'success' ? (
+                                    <div className="py-12 flex flex-col items-center text-center space-y-4">
+                                        <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 mb-2 shadow-lg">
+                                            <span className="material-symbols-outlined text-4xl">check_circle</span>
                                         </div>
-                                    </div>
-                                    {/* Class & Year */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                        <div className="bg-[#F3F4F6] dark:bg-slate-800 rounded-3xl p-3 border-2 border-transparent relative cursor-pointer transition-all duration-400 hover:shadow-lg focus-within:border-[#6366f1]">
-                                            <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Class Tier</label>
-                                            <div className="relative px-2">
-                                                <select className="block w-full border-0 bg-transparent p-3 text-lg font-bold text-[#2D334A] dark:text-white focus:ring-0 cursor-pointer appearance-none z-10 relative pr-10">
-                                                    <option>Class 11th</option>
-                                                    <option>Class 12th</option>
-                                                    <option>Dropper</option>
-                                                </select>
-                                                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#4338ca] dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-900/50 rounded-full p-1 w-8 h-8 flex items-center justify-center">
-                                                    <span className="material-symbols-outlined text-xl">school</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="bg-[#F3F4F6] dark:bg-slate-800 rounded-3xl p-3 border-2 border-transparent relative cursor-pointer transition-all duration-400 hover:shadow-lg focus-within:border-[#6366f1]">
-                                            <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Target Year</label>
-                                            <div className="relative px-2">
-                                                <input className="block w-full border-0 bg-transparent p-3 text-lg font-bold text-[#2D334A] dark:text-white placeholder-gray-300 focus:ring-0 z-10 relative" max="2030" min="2024" placeholder="2025" type="number" defaultValue="2025" />
-                                                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-white bg-[#4338ca] rounded-full p-1 w-8 h-8 flex items-center justify-center shadow-md">
-                                                    <span className="material-symbols-outlined text-sm">star</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Submit Button */}
-                                    <div className="pt-6 relative">
-                                        <button className="group relative w-full h-24 rounded-2xl overflow-hidden bg-[#4338ca] shadow-[0_10px_25px_-5px_rgba(67,56,202,0.5),inset_0_2px_4px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.6)] transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center" type="submit">
-                                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-[#564ee3] to-indigo-600 opacity-100 group-hover:brightness-110"></div>
-                                            <div className="absolute top-4 right-12 w-1.5 h-1.5 bg-white rounded-full animate-ping opacity-0 group-hover:opacity-75"></div>
-                                            <div className="absolute bottom-6 left-16 w-1 h-1 bg-white rounded-full animate-ping opacity-0 group-hover:opacity-60" style={{ animationDelay: '100ms' }}></div>
-                                            <div className="absolute inset-0 rounded-2xl ring-2 ring-white/20 group-hover:ring-white/40 transition-all duration-500 scale-95 group-hover:scale-100"></div>
-                                            <span className="relative z-10 flex items-center text-white text-3xl font-black tracking-widest uppercase">
-                                                <span className="material-symbols-outlined text-4xl mr-3 animate-pulse">bolt</span>
-                                                Start Learning
-                                            </span>
+                                        <h3 className="text-3xl font-black text-slate-900 dark:text-white">Welcome to the Arena!</h3>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 max-w-md">
+                                            You've successfully secured your spot. Prepare for the challenge.
+                                        </p>
+                                        <button
+                                            onClick={() => setStatus('idle')}
+                                            className="mt-6 text-sm font-bold text-indigo-600 hover:text-indigo-700 underline"
+                                        >
+                                            Register another challenger
                                         </button>
-                                        <p className="text-center text-xs text-gray-400 mt-4 font-bold tracking-wide opacity-80">Press to begin your journey</p>
                                     </div>
-                                </form>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="space-y-8">
+                                        {/* Full Name */}
+                                        <div className="bg-[#F3F4F6] dark:bg-slate-800 rounded-3xl p-3 border-2 border-transparent relative transition-all duration-400 focus-within:-translate-y-0.5 focus-within:scale-[1.01] focus-within:shadow-[0_0_0_4px_rgba(99,102,241,0.15),0_4px_12px_rgba(0,0,0,0.05)] focus-within:border-[#6366f1] focus-within:bg-white dark:focus-within:bg-slate-800">
+                                            <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Full Name</label>
+                                            <div className="flex items-center px-1">
+                                                <div className="pl-4 pr-3 text-gray-400">
+                                                    <span className="material-symbols-outlined">person</span>
+                                                </div>
+                                                <input
+                                                    name="fullName"
+                                                    value={formData.fullName}
+                                                    onChange={handleInputChange}
+                                                    className="block w-full border-0 bg-transparent p-2 text-xl font-bold text-[#2D334A] dark:text-white placeholder-gray-300 focus:ring-0 tracking-wide"
+                                                    placeholder="Enter your name"
+                                                    type="text"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Email */}
+                                        <div className="bg-[#F3F4F6] dark:bg-slate-800 rounded-3xl p-3 border-2 border-transparent relative transition-all duration-400 focus-within:-translate-y-0.5 focus-within:scale-[1.01] focus-within:shadow-[0_0_0_4px_rgba(99,102,241,0.15),0_4px_12px_rgba(0,0,0,0.05)] focus-within:border-[#6366f1] focus-within:bg-white dark:focus-within:bg-slate-800">
+                                            <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Email Address</label>
+                                            <div className="flex items-center px-1">
+                                                <div className="pl-4 pr-3 text-gray-400">
+                                                    <span className="material-symbols-outlined">mail</span>
+                                                </div>
+                                                <input
+                                                    name="email"
+                                                    value={formData.email}
+                                                    onChange={handleInputChange}
+                                                    className="block w-full border-0 bg-transparent p-2 text-xl font-bold text-[#2D334A] dark:text-white placeholder-gray-300 focus:ring-0 tracking-wide"
+                                                    placeholder="you@example.com"
+                                                    type="email"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Class & Year */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div className="bg-[#F3F4F6] dark:bg-slate-800 rounded-3xl p-3 border-2 border-transparent relative cursor-pointer transition-all duration-400 hover:shadow-lg focus-within:border-[#6366f1]">
+                                                <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Class Tier</label>
+                                                <div className="relative px-2">
+                                                    <select
+                                                        name="classTier"
+                                                        value={formData.classTier}
+                                                        onChange={handleInputChange}
+                                                        className="block w-full border-0 bg-transparent p-3 text-lg font-bold text-[#2D334A] dark:text-white focus:ring-0 cursor-pointer appearance-none z-10 relative pr-10"
+                                                    >
+                                                        <option>Class 11th</option>
+                                                        <option>Class 12th</option>
+                                                        <option>Dropper</option>
+                                                    </select>
+                                                    <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#4338ca] dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-900/50 rounded-full p-1 w-8 h-8 flex items-center justify-center">
+                                                        <span className="material-symbols-outlined text-xl">school</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="bg-[#F3F4F6] dark:bg-slate-800 rounded-3xl p-3 border-2 border-transparent relative cursor-pointer transition-all duration-400 hover:shadow-lg focus-within:border-[#6366f1]">
+                                                <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Target Year</label>
+                                                <div className="relative px-2">
+                                                    <input
+                                                        name="targetYear"
+                                                        value={formData.targetYear}
+                                                        onChange={handleInputChange}
+                                                        className="block w-full border-0 bg-transparent p-3 text-lg font-bold text-[#2D334A] dark:text-white placeholder-gray-300 focus:ring-0 z-10 relative"
+                                                        max="2030"
+                                                        min="2024"
+                                                        placeholder="2025"
+                                                        type="number"
+                                                    />
+                                                    <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-white bg-[#4338ca] rounded-full p-1 w-8 h-8 flex items-center justify-center shadow-md">
+                                                        <span className="material-symbols-outlined text-sm">star</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Error Message */}
+                                        {errorMessage && (
+                                            <div className="text-red-500 text-sm font-bold text-center bg-red-50 p-2 rounded-lg">
+                                                {errorMessage}
+                                            </div>
+                                        )}
+
+                                        {/* Submit Button */}
+                                        <div className="pt-6 relative">
+                                            <button
+                                                className="group relative w-full h-24 rounded-2xl overflow-hidden bg-[#4338ca] shadow-[0_10px_25px_-5px_rgba(67,56,202,0.5),inset_0_2px_4px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.6)] transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                                                type="submit"
+                                                disabled={status === 'loading'}
+                                            >
+                                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-[#564ee3] to-indigo-600 opacity-100 group-hover:brightness-110"></div>
+                                                <div className="absolute top-4 right-12 w-1.5 h-1.5 bg-white rounded-full animate-ping opacity-0 group-hover:opacity-75"></div>
+                                                <div className="absolute bottom-6 left-16 w-1 h-1 bg-white rounded-full animate-ping opacity-0 group-hover:opacity-60" style={{ animationDelay: '100ms' }}></div>
+                                                <div className="absolute inset-0 rounded-2xl ring-2 ring-white/20 group-hover:ring-white/40 transition-all duration-500 scale-95 group-hover:scale-100"></div>
+                                                <span className="relative z-10 flex items-center text-white text-3xl font-black tracking-widest uppercase">
+                                                    {status === 'loading' ? (
+                                                        <span className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin"></span>
+                                                    ) : (
+                                                        <>
+                                                            <span className="material-symbols-outlined text-4xl mr-3 animate-pulse">bolt</span>
+                                                            Start Learning
+                                                        </>
+                                                    )}
+                                                </span>
+                                            </button>
+                                            <p className="text-center text-xs text-gray-400 mt-4 font-bold tracking-wide opacity-80">Press to begin your journey</p>
+                                        </div>
+                                    </form>
+                                )}
                             </div>
                             <div className="absolute bottom-0 inset-x-0 h-3 bg-gradient-to-r from-indigo-400/30 via-purple-400/30 to-indigo-400/30 blur-sm"></div>
                         </div>

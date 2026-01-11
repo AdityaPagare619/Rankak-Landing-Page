@@ -52,8 +52,11 @@ const TimelineSection = () => {
                             <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-lg border border-emerald-100 dark:border-emerald-800/50 flex items-center justify-center text-emerald-500 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ease-brand-curve">
                                 <span className="material-symbols-outlined text-4xl">spa</span>
                             </div>
-                            <div className="px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200 border border-emerald-100 dark:border-emerald-800/50 text-xs font-black uppercase tracking-widest shadow-sm">
-                                Timeline: 6+ Months
+                            <div className="flex flex-col items-end">
+                                <div className="px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200 border border-emerald-100 dark:border-emerald-800/50 text-xs font-black uppercase tracking-widest shadow-sm mb-1">
+                                    Timeline: 6+ Months
+                                </div>
+                                <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400">For Early Starters</span>
                             </div>
                         </div>
                         <h3 className="font-display font-black text-3xl text-gray-900 dark:text-white mb-3 tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors duration-300">Fresh Start</h3>
@@ -101,8 +104,11 @@ const TimelineSection = () => {
                             <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-lg border border-amber-200 dark:border-amber-700/50 flex items-center justify-center text-amber-500 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ease-brand-curve">
                                 <span className="material-symbols-outlined text-4xl">hourglass_top</span>
                             </div>
-                            <div className="px-3 py-1.5 rounded-xl bg-amber-50 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200 border border-amber-200 dark:border-amber-700/50 text-xs font-black uppercase tracking-widest shadow-sm">
-                                Timeline: 3-6 Months
+                            <div className="flex flex-col items-end">
+                                <div className="px-3 py-1.5 rounded-xl bg-amber-50 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200 border border-amber-200 dark:border-amber-700/50 text-xs font-black uppercase tracking-widest shadow-sm mb-1">
+                                    Timeline: 3-6 Months
+                                </div>
+                                <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400">For Droppers / Regulars</span>
                             </div>
                         </div>
                         <h3 className="font-display font-black text-3xl text-gray-900 dark:text-white mb-3 tracking-tight group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-300">Mid-Year Grind</h3>
@@ -150,8 +156,11 @@ const TimelineSection = () => {
                             <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-lg border border-indigo-200 dark:border-indigo-700/50 flex items-center justify-center text-indigo-500 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ease-brand-curve">
                                 <span className="material-symbols-outlined text-4xl">bolt</span>
                             </div>
-                            <div className="px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-700/50 text-xs font-black uppercase tracking-widest shadow-sm">
-                                Timeline: &lt; 90 Days
+                            <div className="flex flex-col items-end">
+                                <div className="px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-700/50 text-xs font-black uppercase tracking-widest shadow-sm mb-1">
+                                    Timeline: &lt; 90 Days
+                                </div>
+                                <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400">For Late Starters</span>
                             </div>
                         </div>
                         <h3 className="font-display font-black text-3xl text-gray-900 dark:text-white mb-3 tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Final Sprint</h3>

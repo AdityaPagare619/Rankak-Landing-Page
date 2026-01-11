@@ -13,7 +13,9 @@ export default {
                 "hero-secondary": "#818CF8",
                 "hero-accent": "#FCD34D", // Warm yellow
                 "hero-sage": "#84A98C",
+                "hero-sage-muted": "#84A98C", // Muted Sage
                 "hero-sage-light": "#CAD2C5",
+                "hero-amber-soft": "#FCD34D", // Soft Amber
                 "hero-bg-light": "#FFFBF5", // Warm off-white
                 "hero-bg-dark": "#1F2937",
                 "hero-card-light": "#FFFFFF",

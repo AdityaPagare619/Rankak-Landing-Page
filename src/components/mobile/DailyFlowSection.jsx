@@ -122,7 +122,7 @@ const DailyFlowSection = () => {
     };
 
     return (
-        <section className="relative w-full bg-[#FFFDF9] dark:bg-[#0B0A16] font-display antialiased pb-0 overflow-hidden transition-colors duration-300">
+        <section className="relative w-full font-display antialiased pb-0 overflow-hidden">
             {/* Organic Background Blobs */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                 <motion.div
@@ -152,7 +152,7 @@ const DailyFlowSection = () => {
                     className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-amber-100/50 dark:bg-amber-900/20 border border-amber-200/50 dark:border-amber-800/30 rounded-full backdrop-blur-sm"
                 >
                     <span className="material-icons-round text-amber-600 text-sm">auto_awesome</span>
-                    <span className="text-[11px] font-bold text-amber-800 dark:text-amber-200 uppercase tracking-wider">Daily Flow</span>
+                    <span className="text-[11px] font-bold text-amber-800 dark:text-amber-200 uppercase tracking-wider">Rank Routine</span>
                 </motion.div>
 
                 <motion.h1
@@ -182,10 +182,10 @@ const DailyFlowSection = () => {
                 </motion.div>
             </header>
 
-            {/* Timeline Section */}
+            {/* Timeline Section - Premium Cards */}
             <div className="relative z-10 max-w-md mx-auto px-4">
                 {/* Organic Timeline Line */}
-                <div className="absolute left-[28px] top-0 bottom-0 w-1 bg-gradient-to-b from-amber-300 via-orange-400 to-transparent rounded-full opacity-20"></div>
+                <div className="absolute left-[28px] top-0 bottom-0 w-1 bg-gradient-to-b from-amber-300 via-orange-400 to-transparent rounded-full opacity-30"></div>
 
                 {/* 1. Morning Scroll */}
                 <motion.div
@@ -196,23 +196,23 @@ const DailyFlowSection = () => {
                     className="relative mb-12 pl-16"
                 >
                     <div className="absolute left-0 top-0 w-14 flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 shadow-lg shadow-orange-500/20 flex items-center justify-center z-10 border-4 border-[#FFFDF9] dark:border-[#0B0A16]">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 shadow-lg shadow-orange-500/20 flex items-center justify-center z-10 border-4 border-white ring-1 ring-orange-100">
                             <span className="material-icons-round text-white text-2xl">wb_sunny</span>
                         </div>
-                        <div className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-white dark:bg-slate-800 px-2 py-0.5 rounded-full border border-slate-100 dark:border-slate-700">6:30 AM</div>
+                        <div className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-white px-2 py-0.5 rounded-full border border-slate-100 shadow-sm">6:30 AM</div>
                     </div>
 
-                    <div className="bg-white dark:bg-slate-800 rounded-[2rem] p-1 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="bg-slate-50 dark:bg-slate-900/50 rounded-[1.7rem] p-5 border border-slate-100 dark:border-slate-700/50">
+                    <div className="bg-white rounded-[2rem] p-1 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(251,191,36,0.1)] transition-all duration-300 hover:-translate-y-1">
+                        <div className="bg-slate-50/50 rounded-[1.7rem] p-5 border border-slate-100">
                             <div className="flex justify-between items-start mb-3">
-                                <h3 className="text-lg font-bold text-slate-900 dark:text-white">Morning Scroll</h3>
-                                <span className="flex items-center text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-lg border border-amber-100">
+                                <h3 className="text-lg font-black text-slate-900">Morning Intel</h3>
+                                <span className="flex items-center text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-lg border border-amber-100 shadow-sm">
                                     +15 XP
                                 </span>
                             </div>
-                            <p className="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">Wake up with 5 quick Physics concepts to jumpstart your brain.</p>
-                            <button className="w-full py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
-                                Start Session <span className="material-icons-round text-amber-500">play_circle</span>
+                            <p className="text-slate-500 text-sm mb-4 leading-relaxed font-medium">Wake up with 5 quick Physics concepts to jumpstart your brain.</p>
+                            <button className="w-full py-3 rounded-xl bg-white border border-slate-200 text-slate-700 font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors shadow-sm group">
+                                Start Session <span className="material-icons-round text-amber-500 group-hover:scale-110 transition-transform">play_circle</span>
                             </button>
                         </div>
                     </div>
@@ -227,23 +227,23 @@ const DailyFlowSection = () => {
                     className="relative mb-12 pl-16"
                 >
                     <div className="absolute left-0 top-0 w-14 flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-lg shadow-emerald-500/20 flex items-center justify-center z-10 border-4 border-[#FFFDF9] dark:border-[#0B0A16]">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-lg shadow-emerald-500/20 flex items-center justify-center z-10 border-4 border-white ring-1 ring-emerald-100">
                             <span className="material-icons-round text-white text-2xl">lunch_dining</span>
                         </div>
-                        <div className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-white dark:bg-slate-800 px-2 py-0.5 rounded-full border border-slate-100 dark:border-slate-700">2:00 PM</div>
+                        <div className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-white px-2 py-0.5 rounded-full border border-slate-100 shadow-sm">2:00 PM</div>
                     </div>
 
-                    <div className="bg-white dark:bg-slate-800 rounded-[2rem] p-1 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="bg-slate-50 dark:bg-slate-900/50 rounded-[1.7rem] p-5 border border-slate-100 dark:border-slate-700/50">
+                    <div className="bg-white rounded-[2rem] p-1 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(52,211,153,0.1)] transition-all duration-300 hover:-translate-y-1">
+                        <div className="bg-slate-50/50 rounded-[1.7rem] p-5 border border-slate-100">
                             <div className="flex justify-between items-start mb-3">
-                                <h3 className="text-lg font-bold text-slate-900 dark:text-white">Lunch Break</h3>
-                                <span className="flex items-center text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-100">
+                                <h3 className="text-lg font-black text-slate-900">Tactical Refuel</h3>
+                                <span className="flex items-center text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-100 shadow-sm">
                                     Streak Safe
                                 </span>
                             </div>
-                            <p className="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">Bite-sized Chemistry quiz while you eat. Keep the momentum.</p>
-                            <button className="w-full py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
-                                Take Quiz <span className="material-icons-round text-emerald-500">bolt</span>
+                            <p className="text-slate-500 text-sm mb-4 leading-relaxed font-medium">Bite-sized Chemistry quiz while you eat. Keep the momentum.</p>
+                            <button className="w-full py-3 rounded-xl bg-white border border-slate-200 text-slate-700 font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors shadow-sm group">
+                                Take Quiz <span className="material-icons-round text-emerald-500 group-hover:scale-110 transition-transform">bolt</span>
                             </button>
                         </div>
                     </div>
@@ -258,24 +258,24 @@ const DailyFlowSection = () => {
                     className="relative mb-12 pl-16"
                 >
                     <div className="absolute left-0 top-0 w-14 flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/20 flex items-center justify-center z-10 border-4 border-[#FFFDF9] dark:border-[#0B0A16]">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/20 flex items-center justify-center z-10 border-4 border-white ring-1 ring-indigo-100">
                             <span className="material-icons-round text-white text-2xl">lightbulb</span>
                         </div>
-                        <div className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-white dark:bg-slate-800 px-2 py-0.5 rounded-full border border-slate-100 dark:border-slate-700">7:00 PM</div>
+                        <div className="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-white px-2 py-0.5 rounded-full border border-slate-100 shadow-sm">7:00 PM</div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-[2rem] p-1 shadow-xl shadow-indigo-500/20 transform scale-105">
-                        <div className="bg-white dark:bg-slate-900 rounded-[1.7rem] p-6 relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-[2rem] p-1 shadow-xl shadow-indigo-500/30 transform hover:scale-[1.02] transition-transform duration-300">
+                        <div className="bg-white rounded-[1.7rem] p-6 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
                             <div className="flex justify-between items-start mb-3 relative z-10">
-                                <h3 className="text-xl font-black text-slate-900 dark:text-white">Deep Dive</h3>
+                                <h3 className="text-xl font-black text-slate-900">War Room</h3>
                                 <span className="flex items-center text-[10px] font-bold text-white bg-indigo-500 px-2 py-1 rounded-lg shadow-sm">
                                     High XP
                                 </span>
                             </div>
-                            <p className="text-slate-500 dark:text-slate-400 text-sm mb-5 leading-relaxed relative z-10">45 min focused mock test session. This is where growth happens.</p>
-                            <button className="w-full py-4 rounded-xl bg-indigo-600 text-white font-bold text-base flex items-center justify-center gap-2 hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/30 relative z-10">
-                                Enter Focus Mode <span className="material-icons-round">play_arrow</span>
+                            <p className="text-slate-500 text-sm mb-5 leading-relaxed relative z-10 font-medium">45 min focused mock test session. This is where growth happens.</p>
+                            <button className="w-full py-4 rounded-xl bg-indigo-600 text-white font-bold text-base flex items-center justify-center gap-2 hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/30 relative z-10 group">
+                                Enter Focus Mode <span className="material-icons-round group-hover:translate-x-1 transition-transform">play_arrow</span>
                             </button>
                         </div>
                     </div>

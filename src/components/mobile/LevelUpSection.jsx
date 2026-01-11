@@ -68,7 +68,7 @@ const LevelUpSection = () => {
                 <motion.div variants={itemVariants} className="flex flex-col items-center text-center space-y-6 pt-4 mb-2">
                     <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-widest backdrop-blur-md shadow-sm border border-indigo-200 dark:border-indigo-800">
                         <span className="material-icons-round text-sm mr-1.5">auto_awesome</span>
-                        Rank Analysis
+                        Rankak AI Analysis
                     </div>
                     <div className="space-y-3">
                         <h1 className="text-[2.75rem] leading-[1.1] font-black tracking-tight text-slate-900 dark:text-white">
@@ -76,8 +76,11 @@ const LevelUpSection = () => {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Rising Fast.</span>
                         </h1>
                         <p className="text-slate-500 dark:text-slate-400 text-[1.05rem] leading-relaxed max-w-[90%] mx-auto font-medium">
-                            Your personalized strategy is working. You're solving the <span className="text-indigo-600 dark:text-indigo-400 font-bold">right questions</span>.
+                            Rankak AI's <span className="text-indigo-600 dark:text-indigo-400 font-bold">adaptive strategy</span> is working. You're solving the right questions.
                         </p>
+                        <div className="mt-1 text-[10px] font-bold text-slate-400 uppercase tracking-wide opacity-80">
+                            Adapts to Topper • Dropper • Foundation
+                        </div>
                     </div>
                 </motion.div>
 

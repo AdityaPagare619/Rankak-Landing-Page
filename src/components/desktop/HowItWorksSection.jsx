@@ -93,7 +93,7 @@ const HowItWorksSection = () => {
                         <div className="absolute inset-0 bg-gradient-to-br from-lime-50 to-emerald-50 dark:from-slate-800 dark:to-slate-900 rounded-[2.5rem] transform rotate-[-2deg] group-hover:rotate-[-3deg] transition-transform duration-500 border border-lime-100 dark:border-slate-700"></div>
 
                         <div className="relative h-full bg-white dark:bg-[#0B0A16] rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col">
-                            {/* Header: Silent Library Stats */}
+                            {/* Header: Focus Zone Stats */}
                             <div className="p-8 border-b border-slate-100 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md z-20">
                                 <div className="flex justify-between items-center mb-2">
                                     <div className="flex items-center gap-3">
@@ -101,8 +101,8 @@ const HowItWorksSection = () => {
                                             <span className="material-icons-round text-xl">library_books</span>
                                         </div>
                                         <div>
-                                            <h3 className="font-black text-xl text-slate-900 dark:text-white">Silent Library</h3>
-                                            <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Live Presence</p>
+                                            <h3 className="font-black text-xl text-slate-900 dark:text-white">Focus Zone</h3>
+                                            <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Active Challengers</p>
                                         </div>
                                     </div>
                                     <div className="text-right">
@@ -143,9 +143,9 @@ const HowItWorksSection = () => {
                                                 <div className="relative">
                                                     <img src={win.avatar} alt={win.name} className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-700 object-cover" />
                                                     <div className={`absolute -bottom-1 -right-1 w-5 h-5 rounded-full border-2 border-white dark:border-slate-800 flex items-center justify-center text-[10px] text-white ${win.action === 'unlocked' ? 'bg-blue-500' :
-                                                            win.action === 'streak' ? 'bg-orange-500' :
-                                                                win.action === 'rank' ? 'bg-purple-500' :
-                                                                    win.action === 'shield' ? 'bg-emerald-500' : 'bg-indigo-500'
+                                                        win.action === 'streak' ? 'bg-orange-500' :
+                                                            win.action === 'rank' ? 'bg-purple-500' :
+                                                                win.action === 'shield' ? 'bg-emerald-500' : 'bg-indigo-500'
                                                         }`}>
                                                         <span className="material-icons-round text-[10px]">
                                                             {win.action === 'unlocked' ? 'lock_open' :
@@ -216,39 +216,105 @@ const HowItWorksSection = () => {
                             <div className="flex-1 p-6 grid grid-cols-2 gap-4 content-start relative">
                                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
 
-                                {/* Ghost Mode Card */}
-                                <div className="col-span-2 bg-slate-50 dark:bg-slate-800/30 rounded-2xl p-5 border border-slate-100 dark:border-slate-700/50 relative overflow-hidden group/ghost">
+                                {/* Rankak AI Strategy Card - FIXED: Now uses indigo-blue gradient */}
+                                <motion.div
+                                    className="col-span-2 bg-white/80 dark:bg-slate-800/50 rounded-2xl p-5 border-2 border-indigo-100 dark:border-indigo-900/50 relative overflow-hidden group/ghost shadow-lg"
+                                    whileHover={{ scale: 1.01, boxShadow: "0 20px 25px -5px rgba(99, 102, 241, 0.2)" }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                                >
+                                    {/* Animated Background */}
+                                    <motion.div
+                                        className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-200/50 to-transparent dark:from-indigo-800/30 dark:to-transparent rounded-full blur-3xl"
+                                        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                                        transition={{ duration: 4, repeat: Infinity }}
+                                    />
+
                                     <div className="flex justify-between items-center mb-4 relative z-10">
                                         <div className="flex items-center gap-2">
-                                            <div className="p-1.5 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
-                                                <span className="material-icons-round text-sm">visibility_off</span>
+                                            <motion.div
+                                                className="p-2 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl text-white shadow-md shadow-indigo-500/50"
+                                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                            >
+                                                <span className="material-icons-round text-base">neurology</span>
+                                            </motion.div>
+                                            <div>
+                                                <span className="font-black text-slate-900 dark:text-white text-sm block leading-none drop-shadow-sm">Rankak AI</span>
+                                                <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Adaptive Strategy</span>
                                             </div>
-                                            <span className="font-bold text-slate-700 dark:text-slate-200 text-sm">Ghost Mode</span>
                                         </div>
-                                        <span className="text-[10px] font-bold text-purple-600 bg-purple-50 dark:bg-purple-900/20 px-2 py-0.5 rounded">Top 1000 Pace</span>
+                                        <motion.span
+                                            className="text-[10px] font-bold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-700"
+                                            whileHover={{ scale: 1.05 }}
+                                        >
+                                            Topper Mode
+                                        </motion.span>
                                     </div>
-                                    {/* Simulated Graph */}
-                                    <div className="h-24 w-full flex items-end gap-1 relative z-10">
+
+                                    {/* Premium Bar Chart - Indigo-Blue Gradient */}
+                                    <div className="h-28 w-full flex items-end gap-2 relative z-10 mb-3">
                                         {[40, 55, 45, 60, 75, 65, 80, 70, 85, 90].map((h, i) => (
                                             <motion.div
                                                 key={i}
-                                                initial={{ height: 0 }}
-                                                whileInView={{ height: `${h}%` }}
-                                                transition={{ delay: i * 0.05, duration: 0.5 }}
-                                                className="flex-1 bg-purple-200 dark:bg-purple-900/30 rounded-t-sm relative group-hover/ghost:bg-purple-300 transition-colors"
+                                                className="flex-1 relative group/bar cursor-pointer"
+                                                initial={{ height: 0, opacity: 0 }}
+                                                whileInView={{ height: `${h}%`, opacity: 1 }}
+                                                whileHover={{ scale: 1.05 }}
+                                                transition={{
+                                                    delay: i * 0.08,
+                                                    duration: 0.6,
+                                                    type: "spring",
+                                                    stiffness: 200,
+                                                    damping: 20
+                                                }}
+                                                viewport={{ once: true }}
                                             >
-                                                {/* Your Pace Overlay */}
+                                                {/* Background bar */}
+                                                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-indigo-200 via-indigo-100 to-blue-100 dark:from-indigo-900/40 dark:via-indigo-900/30 dark:to-blue-900/20 rounded-t-lg">
+                                                </div>
+
+                                                {/* Active bar with gradient */}
                                                 <motion.div
                                                     initial={{ height: 0 }}
-                                                    whileInView={{ height: `${h - 10}%` }}
-                                                    transition={{ delay: 0.5 + i * 0.05, duration: 0.5 }}
-                                                    className="absolute bottom-0 left-0 w-full bg-purple-500 rounded-t-sm opacity-80"
-                                                />
+                                                    whileInView={{ height: `${Math.max(h - 15, 0)}%` }}
+                                                    transition={{ delay: 0.4 + i * 0.08, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                                                    viewport={{ once: true }}
+                                                    className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-indigo-600 via-indigo-500 to-blue-400 rounded-t-lg shadow-lg shadow-indigo-500/40 group-hover/bar:shadow-indigo-500/60 transition-shadow overflow-hidden"
+                                                    style={{ willChange: 'height' }}
+                                                >
+                                                    {/* Shimmer effect */}
+                                                    <motion.div
+                                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                                        animate={{ x: ["-100%", "200%"] }}
+                                                        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: i * 0.3 }}
+                                                    />
+                                                </motion.div>
                                             </motion.div>
                                         ))}
                                     </div>
-                                    <div className="absolute bottom-2 right-2 text-[10px] font-bold text-purple-500">+15% vs Avg</div>
-                                </div>
+
+                                    <div className="flex justify-between items-center relative z-10">
+                                        <div className="text-[10px] font-bold text-indigo-700 dark:text-indigo-300 flex items-center gap-1">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                                            Adapts to You
+                                        </div>
+                                        <div className="flex gap-1.5">
+                                            {["Topper", "Dropper", "Foundation"].map((mode, idx) => (
+                                                <motion.span
+                                                    key={mode}
+                                                    className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${idx === 0
+                                                            ? 'bg-indigo-600 text-white'
+                                                            : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
+                                                        }`}
+                                                    whileHover={{ scale: 1.05 }}
+                                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                                >
+                                                    {mode}
+                                                </motion.span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </motion.div>
 
                                 {/* Burnout Shield */}
                                 <div className="bg-emerald-50 dark:bg-emerald-900/10 rounded-2xl p-5 border border-emerald-100 dark:border-emerald-800/30 flex flex-col justify-between relative overflow-hidden">

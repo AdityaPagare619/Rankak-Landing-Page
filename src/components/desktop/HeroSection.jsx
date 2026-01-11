@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import AvatarImage from '../../assets/Avatar.svg';
 
 const HeroSection = () => {
     const scrollToSection = (id) => {
@@ -122,14 +121,17 @@ const HeroSection = () => {
 
                     {/* Avatar Image with Organic Breathing Motion */}
                     <div className="relative w-[26rem] h-[26rem] transition-transform duration-700 hover:scale-[1.02] group cursor-pointer animate-float z-10">
+                        {/* Premium Glow Behind */}
+                        <div className="absolute inset-0 bg-indigo-500/30 rounded-full blur-[80px] animate-pulse-slow mix-blend-screen pointer-events-none"></div>
+
                         <img
-                            src={AvatarImage}
+                            src="/src/assets/Avatar.png"
                             alt="Rankak AI"
                             loading="eager"
-                            className="w-full h-full object-contain drop-shadow-[0_40px_80px_-20px_rgba(79,70,229,0.4)] transition-all duration-500 group-hover:-rotate-1"
+                            className="w-full h-full object-contain drop-shadow-[0_40px_80px_-20px_rgba(79,70,229,0.4)] transition-all duration-500 group-hover:-rotate-1 relative z-10"
                         />
                         {/* Inner Glow Pulse */}
-                        <div className="absolute inset-0 bg-indigo-500/10 rounded-full blur-3xl animate-pulse mix-blend-overlay"></div>
+                        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/0 via-white/10 to-indigo-500/0 rounded-full blur-2xl animate-pulse mix-blend-overlay pointer-events-none"></div>
                     </div>
 
                     {/* Floating Card 1: Exam Countdown (Apple-style Glassmorphism) - Top Left Triangle Point */}
