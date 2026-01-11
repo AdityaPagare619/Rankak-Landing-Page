@@ -257,34 +257,6 @@ const DashboardSection = () => {
                                         </svg>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="md:col-span-5 flex flex-col items-center justify-center relative bg-orange-50 dark:bg-orange-900/20 rounded-[2.5rem] border border-orange-100 dark:border-orange-800/50 p-8 overflow-hidden group hover:shadow-2xl hover:bg-orange-50/80 dark:hover:bg-orange-900/30 transition-all duration-500 cursor-pointer animate-fade-up" style={{ animationDelay: '400ms' }}>
-                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-100/50 dark:to-orange-900/20 opacity-50 group-hover:opacity-80 transition-opacity"></div>
-                                <div className="relative w-56 h-56 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-500">
-                                    <div className="absolute w-[180%] h-[180%] rounded-full flame-aura animate-pulse-glow blur-2xl group-hover:animate-pulse"></div>
-                                    <div className="relative z-10 fire-face w-40 h-40 drop-shadow-2xl transition-all duration-500">
-                                        <svg className="w-full h-full" fill="none" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                                            <path className="animate-flame-flicker origin-bottom" d="M50 10C50 10 20 40 20 70C20 95 35 110 50 110C65 110 80 95 80 70C80 40 50 10 50 10Z" fill="url(#fireGradient)"></path>
-                                            <path d="M50 0C50 0 65 25 65 40C65 50 60 55 50 55C40 55 35 50 35 40C35 25 50 0 50 0Z" fill="#FDBA74" opacity="0.6"></path>
-                                            <defs>
-                                                <linearGradient id="fireGradient" x1="50" x2="50" y1="0" y2="110">
-                                                    <stop offset="0%" stopColor="#FCD34D"></stop>
-                                                    <stop offset="50%" stopColor="#F97316"></stop>
-                                                    <stop offset="100%" stopColor="#EF4444"></stop>
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                        <div className="absolute top-[55%] left-1/2 -translate-x-1/2 w-14 h-8 flex justify-between items-center px-1">
-                                            <div className="w-3.5 h-3.5 bg-black rounded-full fire-eyes group-hover:scale-y-50 transition-transform"></div>
-                                            <div className="w-3.5 h-3.5 bg-black rounded-full fire-eyes group-hover:scale-y-50 transition-transform"></div>
-                                        </div>
-                                        <div className="absolute top-[65%] left-1/2 -translate-x-1/2 w-2 h-2 bg-red-900 rounded-full opacity-60 group-hover:w-6 group-hover:h-3 group-hover:rounded-b-full transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                <div className="text-center relative z-10 mt-2 transform transition-transform duration-300 group-hover:translate-y-1">
-                                    <div className="text-7xl font-black text-gray-800 dark:text-white tracking-tight group-hover:scale-110 transition-transform inline-block group-hover:text-orange-600">12</div>
-                                    <div className="text-sm font-bold text-orange-500 uppercase tracking-[0.2em] mt-3 group-hover:text-orange-600">Day Streak</div>
-                                </div>
                                 <div className="mt-8 bg-white dark:bg-slate-800 px-6 py-3 rounded-full text-sm font-bold text-gray-500 dark:text-gray-400 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-2 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                                     <span>Top <span className="text-orange-500 font-extrabold">5%</span> of students</span>
                                 </div>

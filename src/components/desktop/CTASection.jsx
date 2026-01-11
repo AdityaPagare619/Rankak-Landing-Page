@@ -6,7 +6,7 @@ const CTASection = () => {
         fullName: '',
         email: '',
         classTier: 'Class 11th',
-        targetYear: '2025'
+        targetYear: '2026'
     });
     const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
     const [errorMessage, setErrorMessage] = useState('');
@@ -189,7 +189,7 @@ const CTASection = () => {
                                                         className="block w-full border-0 bg-transparent p-3 text-lg font-bold text-[#2D334A] dark:text-white placeholder-gray-300 focus:ring-0 z-10 relative"
                                                         max="2030"
                                                         min="2024"
-                                                        placeholder="2025"
+                                                        placeholder="2026"
                                                         type="number"
                                                     />
                                                     <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-white bg-[#4338ca] rounded-full p-1 w-8 h-8 flex items-center justify-center shadow-md">

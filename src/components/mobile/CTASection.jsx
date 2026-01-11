@@ -9,7 +9,7 @@ const CTASection = () => {
         fullName: '',
         email: '',
         classTier: 'Class 11th',
-        targetYear: '2025'
+        targetYear: '2026'
     });
     const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
     const [errorMessage, setErrorMessage] = useState('');
@@ -230,7 +230,7 @@ const CTASection = () => {
                                         className="relative flex items-center justify-between bg-gray-50 dark:bg-slate-800 rounded-xl border border-gray-100 dark:border-slate-700 h-12 px-3 cursor-pointer hover:border-[#5046e5]/50 hover:bg-white dark:hover:bg-slate-700 transition-all shadow-sm"
                                         onMouseEnter={() => setFocusState('selection')}
                                         onMouseLeave={() => setFocusState('idle')}
-                                        onClick={() => handleSelection('targetYear', formData.targetYear === '2025' ? '2026' : '2025')}
+                                        onClick={() => handleSelection('targetYear', formData.targetYear === '2026' ? '2027' : '2026')}
                                     >
                                         <span className="font-bold text-gray-800 dark:text-white text-xs">{formData.targetYear}</span>
                                         <div className="w-6 h-6 rounded-full bg-[#5046e5] text-white flex items-center justify-center shadow-lg shadow-[#5046e5]/30">
