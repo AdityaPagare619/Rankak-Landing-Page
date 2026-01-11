@@ -317,8 +317,16 @@ const CTASection = () => {
                             </div>
                         </div>
                         <div className="text-right">
-                            <div className="text-2xl font-black text-white">2,400+</div>
-                            <div className="text-[10px] uppercase font-bold tracking-wider text-indigo-200">Students Joined</div>
+                            <motion.div
+                                animate={{ scale: [1, 1.05, 1] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="text-lg font-black text-amber-300 drop-shadow-sm"
+                            >
+                                Very Few Seats Left
+                            </motion.div>
+                            <div className="text-[10px] uppercase font-bold tracking-wider text-indigo-200 flex items-center justify-end gap-1">
+                                <span className="material-icons-round text-[10px]">lock</span> Secure Yours Now
+                            </div>
                         </div>
                     </div>
                     <p className="text-center text-[10px] text-gray-400 mt-6 pb-4">
