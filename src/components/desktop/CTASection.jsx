@@ -1,5 +1,29 @@
 import React, { useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
+import { motion } from 'framer-motion';
+
+const GamifiedText = ({ text, delay = 0, colors = [] }) => (
+    <div className="flex">
+        {text.split('').map((char, i) => (
+            <motion.span
+                key={i}
+                initial={{ y: 0 }}
+                animate={{ y: [0, -4, 0] }}
+                transition={{
+                    duration: 0.6,
+                    repeat: Infinity,
+                    repeatDelay: 2,
+                    delay: delay + (i * 0.05),
+                    ease: "easeInOut"
+                }}
+                className={`inline-block font-black text-lg ${colors[i % colors.length] || 'text-white'} drop-shadow-sm`}
+                style={{ textShadow: '0 2px 0 rgba(0,0,0,0.1)' }}
+            >
+                {char}
+            </motion.span>
+        ))}
+    </div>
+);
 
 const CTASection = () => {
     const [formData, setFormData] = useState({
@@ -286,6 +310,24 @@ const CTASection = () => {
                                         +2k
                                         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-black/20 rounded-full blur-[2px]"></div>
                                     </div>
+                                </div>
+                                <div className="text-right flex flex-col items-end">
+                                    <div className="flex items-center gap-1 mb-1">
+                                        <GamifiedText text="Very" delay={0} colors={['text-amber-300', 'text-orange-300', 'text-amber-200', 'text-yellow-300']} />
+                                        <GamifiedText text="Few" delay={0.2} colors={['text-red-300', 'text-rose-300', 'text-red-200']} />
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                        <GamifiedText text="Seats" delay={0.4} colors={['text-indigo-200', 'text-indigo-100', 'text-purple-200', 'text-indigo-200', 'text-blue-200']} />
+                                        <GamifiedText text="Left" delay={0.6} colors={['text-emerald-300', 'text-green-300', 'text-teal-300', 'text-emerald-200']} />
+                                    </div>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 5 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 1 }}
+                                        className="text-[10px] uppercase font-bold tracking-wider text-indigo-200 flex items-center justify-end gap-1 mt-1"
+                                    >
+                                        <span className="material-symbols-outlined text-[14px] animate-pulse text-amber-400">lock</span> Secure Yours Now
+                                    </motion.div>
                                 </div>
                             </div>
                         </div>
