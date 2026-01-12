@@ -143,7 +143,7 @@ const LevelUpSection = () => {
                                 <img alt="Student avatar 3" className="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-[#131226] object-cover shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPm9Zz_j65ZWsKUJAEqwPdR_K1vFpbVZfDekbAGxUu-42wcFkVE5Cr3Dw3s1LVK2DDR64GXpJiobxleQ0QSDzWPedtwruq30aqaXI-yXWJX5wr36MyHORJHSMDBdJ9NdA068IVxHuD6ytqcd_ac_Pqa29WLCZNLbzRRc6665sGpt1zT_4ToZHsEdFtx6EkNSTOhyDiEOCw2UTVGOm1DA2b0_L_c5T7c4crWgIykOhyj6mAUQE9s5j6hfEpE72QYonyxKPhQxHWP1Y" />
                                 <div className="h-10 w-10 rounded-full bg-indigo-600 ring-2 ring-white dark:ring-[#131226] flex items-center justify-center text-[10px] font-bold text-white shadow-md z-10">+2k</div>
                             </div>
-                            <span className="text-xs text-slate-500 dark:text-slate-400 font-bold">Students ascending today</span>
+                            <span className="text-xs text-slate-500 dark:text-slate-400 font-bold">Cadets ascending today</span>
                         </div>
                     </div>
                 </motion.div>

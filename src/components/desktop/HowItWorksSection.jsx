@@ -75,7 +75,7 @@ const HowItWorksSection = () => {
                         transition={{ delay: 0.2 }}
                         className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed"
                     >
-                        <span className="text-indigo-600 dark:text-indigo-400 font-bold">892 students</span> are studying right now. <br />
+                        <span className="text-indigo-600 dark:text-indigo-400 font-bold">892 Cadets</span> are training right now. <br />
                         None of them are showing off. All of them are growing.
                     </motion.p>
                 </div>
@@ -303,8 +303,8 @@ const HowItWorksSection = () => {
                                                 <motion.span
                                                     key={mode}
                                                     className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${idx === 0
-                                                            ? 'bg-indigo-600 text-white'
-                                                            : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
+                                                        ? 'bg-indigo-600 text-white'
+                                                        : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
                                                         }`}
                                                     whileHover={{ scale: 1.05 }}
                                                     transition={{ type: "spring", stiffness: 400, damping: 17 }}

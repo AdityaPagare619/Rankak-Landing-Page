@@ -1,7 +1,8 @@
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import React from 'react';
+import useGamification from '../../hooks/useGamification';
 
 const HeroSection = () => {
+    const { streak, isLoaded } = useGamification();
+
     return (
         <section className="relative w-full overflow-hidden min-h-screen">
             {/* Background Elements */}
@@ -109,14 +110,16 @@ const HeroSection = () => {
                     </div>
                 </div>
 
-                {/* Badge: AI Active (Orbiting) */}
-                <div className="absolute top-0 right-8 bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl text-gray-800 dark:text-white px-3 py-1.5 rounded-full shadow-lg border border-white/40 dark:border-white/10 animate-float-delayed font-bold text-[10px] flex items-center gap-1.5 z-20 transform rotate-6">
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    AI Active
-                </div>
+                {/* Badge: Streak (Orbiting) */}
+                {isLoaded && (
+                    <div className="absolute top-0 right-8 bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl text-gray-800 dark:text-white px-3 py-1.5 rounded-full shadow-lg border border-white/40 dark:border-white/10 animate-float-delayed font-bold text-[10px] flex items-center gap-1.5 z-20 transform rotate-6">
+                        <span className="relative flex h-3 w-3 items-center justify-center">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                            <span className="text-xs">🔥</span>
+                        </span>
+                        {streak} Day Streak
+                    </div>
+                )}
             </div>
 
             {/* CTA Buttons */}

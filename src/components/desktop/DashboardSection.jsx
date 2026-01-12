@@ -258,7 +258,7 @@ const DashboardSection = () => {
                                     </div>
                                 </div>
                                 <div className="mt-8 bg-white dark:bg-slate-800 px-6 py-3 rounded-full text-sm font-bold text-gray-500 dark:text-gray-400 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-2 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
-                                    <span>Top <span className="text-orange-500 font-extrabold">5%</span> of students</span>
+                                    <span>Top <span className="text-orange-500 font-extrabold">5%</span> of Cadets</span>
                                 </div>
                             </div>
                         </div>

@@ -62,7 +62,7 @@ const DesktopLayout = () => {
                             </div>
                         </div>
                     }>
-                        {/* Dashboard Section - "Your Day. Optimized." */}
+                        {/* Command Center Section - "Your Day. Optimized." */}
                         <section id="dashboard">
                             <DashboardSection />
                         </section>
