@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { supabase } from '../../lib/supabaseClient';
+import useShare from '../../hooks/useShare';
 
 const CTASection = () => {
+    const { share } = useShare();
     const [focusState, setFocusState] = useState('idle'); // 'idle', 'input', 'selection', 'button'
     const [formData, setFormData] = useState({
         fullName: '',
@@ -22,6 +24,14 @@ const CTASection = () => {
 
     const handleSelection = (field, value) => {
         setFormData(prev => ({ ...prev, [field]: value }));
+    };
+
+    const handleShare = () => {
+        share({
+            title: 'Rankak - The AI That Actually Knows JEE',
+            text: 'I just joined the fellowship to defeat NTA. Come with me.',
+            url: window.location.href
+        });
     };
 
     const handleSubmit = async (e) => {
@@ -91,10 +101,11 @@ const CTASection = () => {
     };
 
     const GamifiedText = ({ text, delay = 0, colors = [] }) => (
-        <div className="flex">
+        <div className="flex" aria-label={text} role="text">
             {text.split('').map((char, i) => (
                 <motion.span
                     key={i}
+                    aria-hidden="true"
                     initial={{ y: 0 }}
                     animate={{ y: [0, -4, 0] }}
                     transition={{
@@ -328,25 +339,9 @@ const CTASection = () => {
                     ))}
                 </motion.div>
 
-                import useShare from '../../hooks/useShare';
-
-                // ... inside CTASection component ...
-                const {share} = useShare();
-
-    const handleShare = () => {
-                    share({
-                        title: 'Rankak - The AI That Actually Knows JEE',
-                        text: 'I just joined the fellowship to defeat NTA. Come with me.',
-                        url: window.location.href
-                    });
-    };
-
-                // ... inside return statement, below Social Proof Footer ...
                 {/* Social Proof Footer */}
                 <motion.div variants={itemVariants} className="mt-8 relative z-10 w-full max-w-md">
-                    {/* ... existing Social Proof content ... */}
                     <div className="bg-[#5046e5]/90 dark:bg-indigo-900/80 backdrop-blur-md rounded-2xl p-4 flex items-center justify-between shadow-lg shadow-indigo-500/20">
-                        {/* ... existing avatars ... */}
                         <div className="flex -space-x-3 items-center">
                             <img alt="Student 1" className="w-10 h-10 rounded-full border-2 border-[#5046e5] dark:border-indigo-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUJPc1NL83drrqczeI44JnU61VIc6kNWV5Apc0gK6LwQvq8s62J6DA_gGvCM0Gfn7QMpgfHvNUS75PoUIJMI7RXD2ST5mWmKHj-UsBRmXjnGsABfctOSJYJ6z0QjumVN0CuRWoj2Cf1-kXMzcnnuyua9tPYfxf66eYSHNIQCX8c5XzZ4ixWV-Vh9Y1qdrdpz0sq-ISmNh2k6IAHzRwk6wilC-av1xdTc7__ojD-wnScRGCpKryaqvQY3rBp0z5DnxQmJz1xFhYXrU" />
                             <img alt="Student 2" className="w-10 h-10 rounded-full border-2 border-[#5046e5] dark:border-indigo-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbtXHitjeGv1Qc_LpdvWtE9cP6fGLojV42y-plKxJNZcnwsgtgDeipz7_ioXS6Vn7gshIj4OUHHmzZpeZM63UkNRsj7JavBqzep60AJMD_vq357keOpQpwQZo4Ph-ec2L6ZM0jax9WDnvhS7RB6OKg2aMhn9sB6KQhds4XBgU-YTyUYNoDh9xU8XHyWHC64MxDWYVP1VsnYZJn42Sws7CSvSh-lECioEWtc6vsKMeNsbcpQBz3N2W74E-Xv9zJwng56MRSr1dYoec" />
@@ -371,7 +366,7 @@ const CTASection = () => {
                                     transition={{ delay: 1 }}
                                     className="text-[10px] uppercase font-bold tracking-wider text-indigo-200 flex items-center justify-end gap-1 mt-1"
                                 >
-                                    <span className="material-icons-round text-[10px] animate-pulse text-amber-400">lock</span> Secure Yours Now
+                                    <span aria-hidden="true" className="material-icons-round text-[10px] animate-pulse text-amber-400">lock</span> Secure Yours Now
                                 </motion.div>
                             </div>
                         </div>
@@ -384,7 +379,7 @@ const CTASection = () => {
                         whileTap={{ scale: 0.98 }}
                         className="w-full mt-4 py-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-indigo-100 dark:border-indigo-900/50 flex items-center justify-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold text-sm shadow-sm hover:bg-white dark:hover:bg-slate-800 transition-all"
                     >
-                        <span className="material-icons-round text-lg">share</span>
+                        <span aria-hidden="true" className="material-icons-round text-lg">share</span>
                         Invite Your Squad
                     </motion.button>
 

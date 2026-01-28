@@ -1,3 +1,4 @@
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import useGamification from '../../hooks/useGamification';
 
 const HeroSection = () => {
@@ -6,7 +7,7 @@ const HeroSection = () => {
     return (
         <section className="relative w-full overflow-hidden min-h-screen">
             {/* Background Elements */}
-            <div className="absolute inset-0 w-full h-full">
+            <div className="absolute inset-0 w-full h-full" aria-hidden="true">
                 <svg className="absolute inset-0 w-full h-full opacity-40 dark:opacity-20" preserveAspectRatio="none">
                     <path className="blur-2xl animate-pulse-slow" d="M-50,0 C100,150 20,400 150,600 C280,800 100,900 200,1200" fill="none" stroke="url(#streamGradient)" strokeWidth="80"></path>
                     <path className="opacity-60" d="M-50,0 C100,150 20,400 150,600 C280,800 100,900 200,1200" fill="none" stroke="url(#streamGradient)" strokeDasharray="15 25" strokeWidth="2"></path>
@@ -64,7 +65,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main Avatar - Lottie Animation */}
-            <div className="relative w-full flex justify-center mt-8 mb-8">
+            <div className="relative w-full flex justify-center mt-8 mb-8" aria-hidden="true">
                 <div className="relative w-72 h-72 z-10 animate-float">
                     <DotLottieReact
                         src="https://lottie.host/934db0fb-ed6c-418c-a68f-853839dc64af/sXAp34Jsh1.lottie"
@@ -94,10 +95,10 @@ const HeroSection = () => {
                 </div>
 
                 {/* Floating Card 2: AI Insight (Bottom Right) */}
-                <div className="absolute bottom-12 right-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-3 rounded-2xl shadow-lg border border-white/40 dark:border-white/10 animate-card-right z-20 scale-[0.8] origin-top-left w-40">
+                <div className="absolute bottom-12 right-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-3 rounded-2xl shadow-lg border border-white/40 dark:border-white/10 animate-card-right z-20 scale-[0.8] origin-top-left w-40" aria-hidden="true">
                     <div className="flex justify-between items-center mb-2">
                         <span className="text-[8px] font-black text-amber-600 uppercase tracking-widest flex items-center gap-1">
-                            <span className="material-symbols-outlined text-[10px] animate-spin">sync</span>
+                            <span className="material-symbols-rounded text-[10px] animate-spin">sync</span>
                             Analyzing
                         </span>
                     </div>
@@ -128,12 +129,12 @@ const HeroSection = () => {
                     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] animate-[shimmer_3s_infinite]"></div>
                     <span className="relative z-10 flex items-center justify-center gap-2">
                         Get Early Access
-                        <span className="material-symbols-outlined text-xl animate-[pulse_1s_ease-in-out_infinite]">bolt</span>
+                        <span aria-hidden="true" className="material-symbols-rounded text-xl animate-[pulse_1s_ease-in-out_infinite]">bolt</span>
                     </span>
                 </button>
                 <button className="w-full py-4 rounded-2xl text-indigo-600 dark:text-indigo-300 font-display font-bold text-[17px] flex items-center justify-center gap-2 hover:bg-white/80 active:scale-[0.98] transition-all duration-200 backdrop-blur-sm border border-white/50 dark:border-white/10 hover-liquid">
                     See Rankers
-                    <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    <span aria-hidden="true" className="material-symbols-rounded text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
                 </button>
             </div>
 

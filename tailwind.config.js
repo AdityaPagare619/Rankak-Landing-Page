@@ -142,7 +142,7 @@ export default {
                 'stone-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
                 'sprout-gradient': 'linear-gradient(to top, #84CC16 0%, #bef264 100%)',
                 'root-stream': 'linear-gradient(90deg, transparent 0%, rgba(132, 204, 22, 0.1) 20%, rgba(132, 204, 22, 0.2) 50%, rgba(132, 204, 22, 0.1) 80%, transparent 100%)',
-                'forest-map-pattern': 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M20,50 Q40,20 60,50 T100,50 M0,80 Q30,60 60,80 T100,70\' fill=\'none\' stroke=\'%2384CC16\' stroke-opacity=\'0.2\' stroke-width=\'2\'/%3E%3Ccircle cx=\'25\' cy=\'25\' r=\'2\' fill=\'%23F59E0B\' fill-opacity=\'0.3\'/%3E%3Ccircle cx=\'75\' cy=\'75\' r=\'3\' fill=\'%2384CC16\' fill-opacity=\'0.3\'/%3E%3C/svg%3E")',
+                'forest-map-pattern': 'url("/assets/forest-map.svg")',
                 'shimmer': 'linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 60%)',
                 'grid-pattern': 'linear-gradient(rgba(132, 204, 22, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 204, 22, 0.05) 1px, transparent 1px)',
                 'hero-pattern': 'radial-gradient(#E5E7EB 1px, transparent 1px)',

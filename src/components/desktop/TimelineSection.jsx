@@ -29,7 +29,7 @@ const TimelineSection = () => {
                     Started late? The AI has a <br />
                     <span className="text-hero-primary relative inline-block whitespace-nowrap">
                         30-day strategy
-                        <svg className="absolute w-full h-4 -bottom-2 left-0 text-amber-400 opacity-60" fill="none" preserveAspectRatio="none" stroke="currentColor" strokeWidth="8" viewBox="0 0 100 10">
+                        <svg aria-hidden="true" className="absolute w-full h-4 -bottom-2 left-0 text-amber-400 opacity-60" fill="none" preserveAspectRatio="none" stroke="currentColor" strokeWidth="8" viewBox="0 0 100 10">
                             <path d="M0 5 Q 50 10 100 5"></path>
                         </svg>
                     </span>.
@@ -50,7 +50,7 @@ const TimelineSection = () => {
                     <div className="relative z-10 p-8 flex flex-col h-full">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-lg border border-emerald-100 dark:border-emerald-800/50 flex items-center justify-center text-emerald-500 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ease-brand-curve">
-                                <span className="material-symbols-outlined text-4xl">spa</span>
+                                <span aria-hidden="true" className="material-symbols-rounded text-4xl">spa</span>
                             </div>
                             <div className="flex flex-col items-end">
                                 <div className="px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200 border border-emerald-100 dark:border-emerald-800/50 text-xs font-black uppercase tracking-widest shadow-sm mb-1">
@@ -66,7 +66,7 @@ const TimelineSection = () => {
                         <div className="mt-auto bg-emerald-50/50 dark:bg-black/20 rounded-2xl p-5 border border-emerald-100 dark:border-emerald-900/30 space-y-4">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-700 shadow-sm flex items-center justify-center text-emerald-500 shrink-0 transition-transform duration-300 group-hover:scale-105">
-                                    <span className="material-symbols-outlined text-xl">psychology</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">psychology</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">AI Strategy</div>
@@ -75,7 +75,7 @@ const TimelineSection = () => {
                             </div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-700 shadow-sm flex items-center justify-center text-emerald-500 shrink-0 transition-transform duration-300 group-hover:scale-105 delay-75">
-                                    <span className="material-symbols-outlined text-xl">center_focus_strong</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">center_focus_strong</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Focus</div>
@@ -85,7 +85,7 @@ const TimelineSection = () => {
                             <div className="h-px w-full bg-emerald-200/50 dark:bg-emerald-800/30"></div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-emerald-500 text-white shadow-md shadow-emerald-500/30 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 ease-brand-curve delay-100">
-                                    <span className="material-symbols-outlined text-xl">emoji_events</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">emoji_events</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wider">Your Goal</div>
@@ -102,7 +102,7 @@ const TimelineSection = () => {
                     <div className="relative z-10 p-8 flex flex-col h-full">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-lg border border-amber-200 dark:border-amber-700/50 flex items-center justify-center text-amber-500 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ease-brand-curve">
-                                <span className="material-symbols-outlined text-4xl">hourglass_top</span>
+                                <span aria-hidden="true" className="material-symbols-rounded text-4xl">hourglass_top</span>
                             </div>
                             <div className="flex flex-col items-end">
                                 <div className="px-3 py-1.5 rounded-xl bg-amber-50 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200 border border-amber-200 dark:border-amber-700/50 text-xs font-black uppercase tracking-widest shadow-sm mb-1">
@@ -118,7 +118,7 @@ const TimelineSection = () => {
                         <div className="mt-auto bg-amber-50/50 dark:bg-black/20 rounded-2xl p-5 border border-amber-100 dark:border-amber-800/30 space-y-4">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-700 shadow-sm flex items-center justify-center text-amber-500 shrink-0 transition-transform duration-300 group-hover:scale-105">
-                                    <span className="material-symbols-outlined text-xl">trending_up</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">trending_up</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">AI Strategy</div>
@@ -127,7 +127,7 @@ const TimelineSection = () => {
                             </div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-700 shadow-sm flex items-center justify-center text-amber-500 shrink-0 transition-transform duration-300 group-hover:scale-105 delay-75">
-                                    <span className="material-symbols-outlined text-xl">filter_center_focus</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">filter_center_focus</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Focus</div>
@@ -137,7 +137,7 @@ const TimelineSection = () => {
                             <div className="h-px w-full bg-amber-200/50 dark:bg-amber-800/30"></div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-amber-400 text-white shadow-md shadow-amber-500/30 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 ease-brand-curve delay-100">
-                                    <span className="material-symbols-outlined text-xl">emoji_events</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">emoji_events</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-amber-700 dark:text-amber-300 uppercase tracking-wider">Your Goal</div>
@@ -154,7 +154,7 @@ const TimelineSection = () => {
                     <div className="relative z-10 p-8 flex flex-col h-full">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-lg border border-indigo-200 dark:border-indigo-700/50 flex items-center justify-center text-indigo-500 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ease-brand-curve">
-                                <span className="material-symbols-outlined text-4xl">bolt</span>
+                                <span aria-hidden="true" className="material-symbols-rounded text-4xl">bolt</span>
                             </div>
                             <div className="flex flex-col items-end">
                                 <div className="px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-700/50 text-xs font-black uppercase tracking-widest shadow-sm mb-1">
@@ -170,7 +170,7 @@ const TimelineSection = () => {
                         <div className="mt-auto bg-indigo-50/50 dark:bg-black/20 rounded-2xl p-5 border border-indigo-100 dark:border-indigo-800/30 space-y-4">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-700 shadow-sm flex items-center justify-center text-indigo-500 shrink-0 transition-transform duration-300 group-hover:scale-105">
-                                    <span className="material-symbols-outlined text-xl">error_outline</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">error_outline</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">AI Strategy</div>
@@ -179,7 +179,7 @@ const TimelineSection = () => {
                             </div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-700 shadow-sm flex items-center justify-center text-indigo-500 shrink-0 transition-transform duration-300 group-hover:scale-105 delay-75">
-                                    <span className="material-symbols-outlined text-xl">ads_click</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">ads_click</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Focus</div>
@@ -189,7 +189,7 @@ const TimelineSection = () => {
                             <div className="h-px w-full bg-indigo-200/50 dark:bg-indigo-800/30"></div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-indigo-500 text-white shadow-md shadow-indigo-500/30 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 ease-brand-curve delay-100">
-                                    <span className="material-symbols-outlined text-xl">emoji_events</span>
+                                    <span aria-hidden="true" className="material-symbols-rounded text-xl">emoji_events</span>
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider">Your Goal</div>
@@ -205,10 +205,10 @@ const TimelineSection = () => {
                 <div className="bg-gradient-to-br from-indigo-600 to-hero-primary rounded-[2.5rem] p-8 md:p-14 text-center shadow-2xl shadow-indigo-500/40 overflow-hidden relative border-4 border-indigo-400/30 group cursor-default hover:scale-[1.01] transition-transform duration-400 ease-brand-curve">
                     <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
                     <div className="absolute bottom-0 right-0 w-64 h-64 bg-amber-400/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-                    <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSIxIiB5PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjwvc3ZnPg==')]"></div>
+                    <div className="absolute inset-0 opacity-10 bg-[url('/assets/grid-2x2.svg')]"></div>
                     <div className="relative z-10 flex flex-col items-center">
                         <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/20 shadow-lg animate-float-slow group-hover:bg-white/20 transition-colors duration-300">
-                            <span className="material-symbols-outlined text-amber-400 text-4xl drop-shadow-md">insights</span>
+                            <span aria-hidden="true" className="material-symbols-rounded text-amber-400 text-4xl drop-shadow-md">insights</span>
                         </div>
                         <h3 className="font-display font-bold text-2xl md:text-3xl text-white leading-relaxed max-w-3xl drop-shadow-sm">
                             "Students joining with <span className="bg-indigo-900/40 px-4 py-1.5 rounded-xl border border-indigo-300/30 text-amber-400 font-black whitespace-nowrap shadow-inner transition-colors duration-300 group-hover:bg-indigo-900/60">&lt;90 days</span> improved <span className="text-amber-400 font-black text-5xl mx-1 filter drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">60+</span> percentile points because we show them what actually matters now."
