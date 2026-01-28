@@ -16,13 +16,13 @@ const HeroSection = () => {
                 {/* Badges - Floating with subtle parallax feel */}
                 <div className="flex flex-wrap gap-4 animate-float-slow motion-fade-up motion-fade-up-delay-1">
                     <span className="px-5 py-2 bg-white/60 backdrop-blur-md text-gray-800 rounded-full text-xs font-bold border border-white/50 flex items-center gap-2 shadow-[0_8px_16px_-6px_rgba(0,0,0,0.05)] transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-white/80">
-                        <span className="material-symbols-outlined text-base text-indigo-500">verified</span> 100% Exam Level
+                        <span aria-hidden="true" className="material-symbols-rounded text-base text-indigo-500">verified</span> 100% Exam Level
                     </span>
                     <span className="px-5 py-2 bg-amber-50/60 backdrop-blur-md text-amber-700 rounded-full text-xs font-bold border border-amber-100/50 flex items-center gap-2 shadow-[0_8px_16px_-6px_rgba(251,191,36,0.1)] transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-amber-50/80">
-                        <span className="material-symbols-outlined text-base">school</span> घर बैठे Coaching
+                        <span aria-hidden="true" className="material-symbols-rounded text-base">school</span> घर बैठे Coaching
                     </span>
                     <span className="hidden sm:flex px-5 py-2 bg-indigo-50/60 backdrop-blur-md text-indigo-700 rounded-full text-xs font-bold border border-indigo-100/50 items-center gap-2 shadow-[0_8px_16px_-6px_rgba(99,102,241,0.1)] transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-indigo-50/80">
-                        <span className="material-symbols-outlined text-base">timelapse</span> Backlog? No Problem
+                        <span aria-hidden="true" className="material-symbols-rounded text-base">timelapse</span> Backlog? No Problem
                     </span>
                 </div>
 
@@ -34,7 +34,7 @@ const HeroSection = () => {
                         <span className="inline-block hover:-translate-y-1 transition-transform duration-300 cursor-default">That</span>{' '}
                         <span className="text-hero-primary relative inline-block hover:scale-105 transition-transform duration-300 ease-brand-curve">
                             Actually
-                            <svg className="absolute w-full h-4 -bottom-2 left-0 text-hero-accent opacity-90" preserveAspectRatio="none" viewBox="0 0 100 15">
+                            <svg aria-hidden="true" className="absolute w-full h-4 -bottom-2 left-0 text-hero-accent opacity-90" preserveAspectRatio="none" viewBox="0 0 100 15">
                                 <path d="M0 5 Q 25 12 50 5 T 100 5" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="8"></path>
                             </svg>
                         </span>
@@ -59,14 +59,14 @@ const HeroSection = () => {
                         className="w-full sm:w-auto bg-hero-primary text-white font-display font-bold text-lg py-4 px-10 rounded-full shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:bg-indigo-600 hover:shadow-[0_15px_35px_-10px_rgba(79,70,229,0.6)] hover:-translate-y-1 active:translate-y-0 active:shadow-none transition-all duration-300 ease-brand-curve flex items-center justify-center gap-3 group border border-white/10"
                     >
                         Get Early Access
-                        <span className="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                        <span aria-hidden="true" className="material-symbols-rounded transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
                     </button>
                     <button
                         onClick={() => scrollToSection('how-it-works')}
                         className="w-full sm:w-auto bg-white/50 backdrop-blur-sm border border-gray-200 text-gray-700 font-display font-bold text-lg py-4 px-10 rounded-full hover:bg-white hover:border-hero-primary/30 hover:text-hero-primary hover:shadow-lg transition-all duration-300 ease-brand-smooth flex items-center justify-center gap-2 group"
                     >
                         See Rankers
-                        <span className="group-hover:translate-x-1 transition-transform duration-300 ease-brand-curve material-symbols-outlined">arrow_right_alt</span>
+                        <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-300 ease-brand-curve material-symbols-rounded">arrow_right_alt</span>
                     </button>
                 </div>
 
@@ -166,7 +166,7 @@ const HeroSection = () => {
                         {/* Header Bar */}
                         <div className="bg-amber-50/30 px-4 py-2 border-b border-white/20 flex justify-between items-center">
                             <span className="text-[9px] font-black text-amber-600/80 uppercase tracking-widest flex items-center gap-1">
-                                <span className="material-symbols-outlined text-[10px] animate-spin">sync</span>
+                                <span aria-hidden="true" className="material-symbols-rounded text-[10px] animate-spin">sync</span>
                                 Analyzing Path...
                             </span>
                         </div>
@@ -184,7 +184,7 @@ const HeroSection = () => {
                                     <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Optics
                                 </span>
                                 <span className="text-[10px] font-bold text-gray-400 flex items-center gap-1 hover:text-indigo-500 transition-colors cursor-pointer">
-                                    View Plan <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                                    View Plan <span aria-hidden="true" className="material-symbols-rounded text-xs">arrow_forward</span>
                                 </span>
                             </div>
                         </div>

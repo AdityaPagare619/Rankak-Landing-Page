@@ -3,10 +3,11 @@ import { supabase } from '../../lib/supabaseClient';
 import { motion } from 'framer-motion';
 
 const GamifiedText = ({ text, delay = 0, colors = [] }) => (
-    <div className="flex">
+    <div className="flex" aria-label={text} role="text">
         {text.split('').map((char, i) => (
             <motion.span
                 key={i}
+                aria-hidden="true"
                 initial={{ y: 0 }}
                 animate={{ y: [0, -4, 0] }}
                 transition={{
@@ -124,7 +125,7 @@ const CTASection = () => {
                             <div className="p-8 md:p-14 relative z-10">
                                 <div className="text-center mb-10">
                                     <span className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-indigo-50/80 dark:bg-indigo-900/50 backdrop-blur-sm text-[#4338ca] dark:text-indigo-300 font-black text-sm uppercase tracking-widest mb-2 border border-indigo-100 dark:border-indigo-800 shadow-sm hover:bg-indigo-100 dark:hover:bg-indigo-900/70 transition-colors cursor-default">
-                                        <span className="material-symbols-outlined text-base mr-2 animate-pulse">auto_awesome</span>
+                                        <span aria-hidden="true" className="material-symbols-rounded text-base mr-2 animate-pulse">auto_awesome</span>
                                         Initiation Portal
                                     </span>
                                 </div>
@@ -132,7 +133,7 @@ const CTASection = () => {
                                 {status === 'success' ? (
                                     <div className="py-12 flex flex-col items-center text-center space-y-4">
                                         <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 mb-2 shadow-lg">
-                                            <span className="material-symbols-outlined text-4xl">check_circle</span>
+                                            <span aria-hidden="true" className="material-symbols-rounded text-4xl">check_circle</span>
                                         </div>
                                         <h3 className="text-3xl font-black text-slate-900 dark:text-white">Welcome to the Arena!</h3>
                                         <p className="text-lg text-slate-500 dark:text-slate-400 max-w-md">
@@ -152,7 +153,7 @@ const CTASection = () => {
                                             <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Full Name</label>
                                             <div className="flex items-center px-1">
                                                 <div className="pl-4 pr-3 text-gray-400">
-                                                    <span className="material-symbols-outlined">person</span>
+                                                    <span aria-hidden="true" className="material-symbols-rounded">person</span>
                                                 </div>
                                                 <input
                                                     name="fullName"
@@ -170,7 +171,7 @@ const CTASection = () => {
                                             <label className="block text-[11px] font-extrabold text-gray-400 uppercase tracking-widest ml-5 mb-1.5">Email Address</label>
                                             <div className="flex items-center px-1">
                                                 <div className="pl-4 pr-3 text-gray-400">
-                                                    <span className="material-symbols-outlined">mail</span>
+                                                    <span aria-hidden="true" className="material-symbols-rounded">mail</span>
                                                 </div>
                                                 <input
                                                     name="email"
@@ -199,7 +200,7 @@ const CTASection = () => {
                                                         <option>Dropper</option>
                                                     </select>
                                                     <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#4338ca] dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-900/50 rounded-full p-1 w-8 h-8 flex items-center justify-center">
-                                                        <span className="material-symbols-outlined text-xl">school</span>
+                                                        <span aria-hidden="true" className="material-symbols-rounded text-xl">school</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -217,7 +218,7 @@ const CTASection = () => {
                                                         type="number"
                                                     />
                                                     <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-white bg-[#4338ca] rounded-full p-1 w-8 h-8 flex items-center justify-center shadow-md">
-                                                        <span className="material-symbols-outlined text-sm">star</span>
+                                                        <span aria-hidden="true" className="material-symbols-rounded text-sm">star</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -246,7 +247,7 @@ const CTASection = () => {
                                                         <span className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin"></span>
                                                     ) : (
                                                         <>
-                                                            <span className="material-symbols-outlined text-4xl mr-3 animate-pulse">bolt</span>
+                                                            <span aria-hidden="true" className="material-symbols-rounded text-4xl mr-3 animate-pulse">bolt</span>
                                                             Start Learning
                                                         </>
                                                     )}
@@ -267,31 +268,31 @@ const CTASection = () => {
                         <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-[2.5rem] p-10 border border-white dark:border-slate-700 shadow-xl relative overflow-hidden group hover:bg-white/90 dark:hover:bg-slate-800/90 transition-colors duration-500">
                             <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-green-50 to-transparent dark:from-green-900/20 rounded-bl-full -mr-10 -mt-10 opacity-60"></div>
                             <h3 className="text-xl font-bold text-[#2D334A] dark:text-white mb-8 flex items-center relative z-10">
-                                <span className="material-symbols-outlined text-gray-400 mr-3 text-2xl">verified_user</span>
+                                <span aria-hidden="true" className="material-symbols-rounded text-gray-400 mr-3 text-2xl">verified_user</span>
                                 The Rankak Promise
                             </h3>
                             <ul className="space-y-6 relative z-10">
                                 <li className="flex items-start group/item cursor-default">
                                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center mr-4 group-hover/item:scale-110 group-hover/item:bg-green-500 group-hover/item:text-white transition-all duration-300 shadow-sm">
-                                        <span className="material-symbols-outlined text-[18px] font-bold">check</span>
+                                        <span aria-hidden="true" className="material-symbols-rounded text-[18px] font-bold">check</span>
                                     </div>
                                     <span className="text-gray-700 dark:text-gray-300 font-bold text-lg group-hover/item:text-green-700 dark:group-hover/item:text-green-400 transition-colors pt-0.5">Free forever. No hidden charges.</span>
                                 </li>
                                 <li className="flex items-start group/item cursor-default">
                                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mr-4 group-hover/item:scale-110 group-hover/item:bg-indigo-500 group-hover/item:text-white transition-all duration-300 shadow-sm">
-                                        <span className="material-symbols-outlined text-[18px] font-bold">lock</span>
+                                        <span aria-hidden="true" className="material-symbols-rounded text-[18px] font-bold">lock</span>
                                     </div>
                                     <span className="text-gray-700 dark:text-gray-300 font-bold text-lg group-hover/item:text-indigo-700 dark:group-hover/item:text-indigo-400 transition-colors pt-0.5">Your data is yours. We don't sell it.</span>
                                 </li>
                                 <li className="flex items-start group/item cursor-default">
                                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center mr-4 group-hover/item:scale-110 group-hover/item:bg-amber-500 group-hover/item:text-white transition-all duration-300 shadow-sm">
-                                        <span className="material-symbols-outlined text-[18px] font-bold">unsubscribe</span>
+                                        <span aria-hidden="true" className="material-symbols-rounded text-[18px] font-bold">unsubscribe</span>
                                     </div>
                                     <span className="text-gray-700 dark:text-gray-300 font-bold text-lg group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400 transition-colors pt-0.5">Unsubscribe anytime. No penalties.</span>
                                 </li>
                                 <li className="flex items-start group/item cursor-default">
                                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center mr-4 group-hover/item:scale-110 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all duration-300 shadow-sm">
-                                        <span className="material-symbols-outlined text-[18px] font-bold">save_as</span>
+                                        <span aria-hidden="true" className="material-symbols-rounded text-[18px] font-bold">save_as</span>
                                     </div>
                                     <span className="text-gray-700 dark:text-gray-300 font-bold text-lg group-hover/item:text-blue-700 dark:group-hover/item:text-blue-400 transition-colors pt-0.5">Cancel anytime. Progress is saved.</span>
                                 </li>
@@ -326,7 +327,7 @@ const CTASection = () => {
                                         transition={{ delay: 1 }}
                                         className="text-[10px] uppercase font-bold tracking-wider text-indigo-200 flex items-center justify-end gap-1 mt-1"
                                     >
-                                        <span className="material-symbols-outlined text-[14px] animate-pulse text-amber-400">lock</span> Secure Yours Now
+                                        <span aria-hidden="true" className="material-symbols-rounded text-[14px] animate-pulse text-amber-400">lock</span> Secure Yours Now
                                     </motion.div>
                                 </div>
                             </div>
